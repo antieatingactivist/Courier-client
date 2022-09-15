@@ -5,7 +5,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { StopListComponent } from './stop-list/stop-list.component';
 import { DetailsComponent } from './details/details.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: 'stops', component: StopListComponent },
+  { path: 'details', component: DetailsComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
