@@ -7,6 +7,7 @@ import { StopListComponent } from './stop-list/stop-list.component';
 import { DetailsComponent } from './details/details.component';
 import { StopComponent } from './stop-list/stop/stop.component';
 import { HttpClientModule } from "@angular/common/http";
+import { StopDataService } from './shared/stop-data.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { HttpClientModule } from "@angular/common/http";
     AppRoutingModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [StopDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
