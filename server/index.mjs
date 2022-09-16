@@ -17,6 +17,12 @@ const PORT = 3000;
 
 // Routes
 app.get("*", function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Cache-Control, Pragma, Origin, Authorization, Content-Type, X-Requested-With");
+  res.header("Access-Control-Allow-Methods", "GET, PUT, POST, OPTIONS");
+  res.header("Access-Control-Expose-Headers", "ETag, Link, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset");
+  res.header("Access-Control-Max-Age", "86400");
+  res.header("Access-Control-Allow-Credentials", true);
   res.json(data)
 });
 

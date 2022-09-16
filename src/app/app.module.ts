@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { StopListComponent } from './stop-list/stop-list.component';
 import { DetailsComponent } from './details/details.component';
 import { StopComponent } from './stop-list/stop/stop.component';
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { StopComponent } from './stop-list/stop/stop.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
