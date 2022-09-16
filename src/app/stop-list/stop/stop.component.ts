@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { IStop } from "../../shared/stop-data.model";
 
 @Component({
   selector: 'app-stop',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./stop.component.css']
 })
 export class StopComponent implements OnInit {
-
+  @Input() stop: any;
   constructor() { }
 
   ngOnInit(): void {

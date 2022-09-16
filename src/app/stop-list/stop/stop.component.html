@@ -1,11 +1,11 @@
 <div class="row">
     <div class="col">
         <div class="card">               
-            <div class="card-body remove-padding">                 
-                <p>Client Name</p>
-                <p>666 Post St<br>San Francisco, CA 94109</p>
-                <p>9:00 AM - 11:30 PM</p>
-                <p>Rush</p>
+            <div class="card-body remove-padding">               
+                <p>{{stop.sender.name}}</p>
+                <p>{{stop.sender.address}}<br>{{stop.sender.city}}, {{stop.sender.state}} {{stop.sender.zip}}</p>
+                <p>{{stop.sender.arrivalWindowStart | date: 'shortTime'}} - {{stop.sender.arrivalWindowEnd | date: 'shortTime'}}</p>
+                <p>{{stop.level}}</p>
             </div>                
         </div>
     </div>

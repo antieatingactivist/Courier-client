@@ -1,8 +1,5 @@
 <div class="container-fluid">
 
-    <app-stop></app-stop>
-    <app-stop></app-stop>
-    <app-stop></app-stop>
-    <app-stop></app-stop>
-    <app-stop></app-stop>
+    <app-stop *ngFor="let stop of data" [stop]="stop"></app-stop>
+
 </div>

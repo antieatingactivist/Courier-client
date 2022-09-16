@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
 import { IStop } from "./shared/stop-data.model";
 import { StopDataService } from "./shared/stop-data.service";
 
@@ -10,12 +9,9 @@ import { StopDataService } from "./shared/stop-data.service";
 })
 export class AppComponent {
   title = 'Courier-client';
-  data:any = []
-  parsedData:string = "";
-  constructor(private http: HttpClient, private stopData: StopDataService) {}
+
+  constructor() {}
   
-  getData() {
-    console.log(this.stopData.getData());
-  }
+
 
 }

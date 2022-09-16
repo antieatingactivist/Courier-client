@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { StopComponent } from './stop/stop.component'
+import { StopComponent } from './stop/stop.component';
+import { StopDataService } from "../shared/stop-data.service";
+import { IStop } from "../shared/stop-data.model"
 
 @Component({
   selector: 'app-stop-list',
@@ -7,10 +9,15 @@ import { StopComponent } from './stop/stop.component'
   styleUrls: ['./stop-list.component.css']
 })
 export class StopListComponent implements OnInit {
-
-  constructor() { }
+  data:any[] = [];
+  constructor(private stopData: StopDataService) {}
 
   ngOnInit(): void {
+    this.data = this.getData()
+    console.log(this.data);
   }
-
+  getData(): object[] {
+    return this.stopData.getData();
+    
+  }
 }
