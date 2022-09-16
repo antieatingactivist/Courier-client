@@ -42,7 +42,9 @@ const data = [
         address: "666 Post st.",
         city: "San Francisco",
         state: "CA",
-        zip: "94109"
+        zip: "94109",
+        arrivalWindowStart: new Date("2022-12-17T09:00:00"),
+        arrivalWindowEnd: new Date("2022-12-17T09:30:00"),
       },
     recipient: 
       {
@@ -50,10 +52,11 @@ const data = [
         address: "999 Pine st.",
         city: "San Francisco",
         state: "CA",
-        zip: "94109"
+        zip: "94109",
+        arrivalWindowStart: new Date("2022-12-17T11:00:00"),
+        arrivalWindowEnd: new Date("2022-12-17T11:30:00"),
       },
-    pickupTime: new Date("2022-12-17T09:30:00"),
-    deliveryTime: new Date("2022-12-17T11:30:00"),
+
     level: "Rush"
   }
 ]

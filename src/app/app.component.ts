@@ -8,14 +8,16 @@ import { HttpClient } from "@angular/common/http";
 })
 export class AppComponent {
   title = 'Courier-client';
-  private data:any = []
+  data:any = []
+  parsedData:string = "";
   constructor(private http: HttpClient) {}
   
   getData() {
     const url ='http://localhost:3000'
     this.http.get(url).subscribe((res)=>{
       this.data = res
-      console.log(this.data)
+      this.parsedData = JSON.stringify(this.data[0], null, 2);
+      console.log(JSON.stringify(this.data[0]))
     })
   }
 }
