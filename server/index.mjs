@@ -58,5 +58,29 @@ const data = [
       },
 
     level: "Rush"
+  },
+  { 
+    sender: 
+      {
+        name: "Bumper",
+        address: "333 Sutter st.",
+        city: "San Francisco",
+        state: "CA",
+        zip: 94109,
+        arrivalWindowStart: new Date("2022-12-17T10:00:00"),
+        arrivalWindowEnd: new Date("2022-12-17T10:30:00"),
+      },
+    recipient: 
+      {
+        name: "Zumper",
+        address: "111 California st.",
+        city: "San Francisco",
+        state: "CA",
+        zip: 94109,
+        arrivalWindowStart: new Date("2022-12-17T12:00:00"),
+        arrivalWindowEnd: new Date("2022-12-17T12:30:00"),
+      },
+
+    level: "Regular"
   }
 ]

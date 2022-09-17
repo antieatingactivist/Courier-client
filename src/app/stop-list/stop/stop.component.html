@@ -1,11 +1,11 @@
 <div class="row">
     <div class="col">
         <div class="card">               
-            <div class="card-body remove-padding">               
+            <div class="card-body remove-padding dark">               
                 <p>{{stop.clientInfo.name}}</p>
                 <p>{{stop.clientInfo.address}}<br>{{stop.clientInfo.city}}, {{stop.clientInfo.state}} {{stop.clientInfo.zip}}</p>
                 <p>{{stop.clientInfo.arrivalWindowStart | date: 'shortTime'}} - {{stop.clientInfo.arrivalWindowEnd | date: 'shortTime'}}</p>
-                <p>{{stop.level}}</p>
+                {{stop.level}}
             </div>                
         </div>
     </div>

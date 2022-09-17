@@ -1,6 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.min.css";
 
+body.dark {
+    background-color: #000000;
+}
+.dark {
+    background-color: #000000dd;
+    color: #ffffff;
+}
+
+
 .remove-padding{
     /* margin:0 !important; */
     padding: 2px !important;
