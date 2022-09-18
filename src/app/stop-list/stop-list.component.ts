@@ -11,6 +11,7 @@ import { IStop } from "../shared/stop-data.model"
 export class StopListComponent implements OnInit {
   data:any[] = [];
   separatedStops:any[] = [];
+  
   constructor(private stopData: StopDataService) {}
 
   ngOnInit(): void {
