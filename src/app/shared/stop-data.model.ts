@@ -1,6 +1,12 @@
-export interface IStop {
+export interface ITag {
     sender: IClient,
     recipient: IClient,
+    level: string
+}
+
+export interface IStop {
+    associatedClient: IClient,
+    clientInfo: IClient,
     level: string
 }
 

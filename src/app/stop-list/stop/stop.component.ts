@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IStop } from "../../shared/stop-data.model";
+import { ITag } from "../../shared/stop-data.model";
 
 @Component({
   selector: 'app-stop',
