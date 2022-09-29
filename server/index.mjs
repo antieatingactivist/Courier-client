@@ -36,50 +36,46 @@ http.createServer(app)
 
 const data = [
   { 
-    sender: 
-      {
-        name: "Dumper",
-        address: "666 Post st.",
-        city: "San Francisco",
-        state: "CA",
-        zip: 94109,
-        arrivalWindowStart: new Date("2022-12-17T09:00:00"),
-        arrivalWindowEnd: new Date("2022-12-17T09:30:00"),
-      },
-    recipient: 
-      {
-        name: "Clumper",
-        address: "999 Pine st.",
-        city: "San Francisco",
-        state: "CA",
-        zip: 94109,
-        arrivalWindowStart: new Date("2022-12-17T11:00:00"),
-        arrivalWindowEnd: new Date("2022-12-17T11:30:00"),
-      },
+    sender: {
+      name: "Dumper",
+      address: "666 Post st.",
+      city: "San Francisco",
+      state: "CA",
+      zip: 94109,
+      arrivalWindowStart: new Date("2022-12-17T09:00:00"),
+      arrivalWindowEnd: new Date("2022-12-17T09:30:00"),
+    },
+    recipient: {
+      name: "Clumper",
+      address: "999 Pine st.",
+      city: "San Francisco",
+      state: "CA",
+      zip: 94109,
+      arrivalWindowStart: new Date("2022-12-17T11:00:00"),
+      arrivalWindowEnd: new Date("2022-12-17T11:30:00"),
+    },
 
     level: "Rush"
   },
   { 
-    sender: 
-      {
-        name: "Bumper",
-        address: "333 Sutter st.",
-        city: "San Francisco",
-        state: "CA",
-        zip: 94109,
-        arrivalWindowStart: new Date("2022-12-17T10:00:00"),
-        arrivalWindowEnd: new Date("2022-12-17T10:30:00"),
-      },
-    recipient: 
-      {
-        name: "Zumper",
-        address: "111 California st.",
-        city: "San Francisco",
-        state: "CA",
-        zip: 94109,
-        arrivalWindowStart: new Date("2022-12-17T12:00:00"),
-        arrivalWindowEnd: new Date("2022-12-17T12:30:00"),
-      },
+    sender: {
+      name: "Bumper",
+      address: "333 Sutter st.",
+      city: "San Francisco",
+      state: "CA",
+      zip: 94109,
+      arrivalWindowStart: new Date("2022-12-17T10:00:00"),
+      arrivalWindowEnd: new Date("2022-12-17T10:30:00"),
+    },
+    recipient: {
+      name: "Zumper",
+      address: "111 California st.",
+      city: "San Francisco",
+      state: "CA",
+      zip: 94109,
+      arrivalWindowStart: new Date("2022-12-17T12:00:00"),
+      arrivalWindowEnd: new Date("2022-12-17T12:30:00"),
+    },
 
     level: "Regular"
   }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StopComponent } from './stop/stop.component';
-import { StopDataService } from "../shared/stop-data.service";
+import { DataService } from "../shared/data.service";
 import { IStop } from "../shared/stop-data.model"
 
 @Component({
@@ -9,21 +9,33 @@ import { IStop } from "../shared/stop-data.model"
   styleUrls: ['./stop-list.component.css']
 })
 export class StopListComponent implements OnInit {
-  data:any[] = [];
+  allTags: any[] = [];
   separatedStops:any[] = [];
   
-  constructor(private stopData: StopDataService) {}
+  constructor(private dataService: DataService) {}
 
-  ngOnInit(): void {
-    this.data = this.getData();
-    this.organizeData();
-    console.log(this.data);
+  ngOnInit() {
+    this.dataService.getAllTags().subscribe(
+      (data:any[]) => this.allTags = data,
+      (err :any) => console.error(err),
+      () => {
+        console.log(this.allTags)
+        this.organizeData();
+        console.log(this.separatedStops)
+      }
+    )
   }
-  private getData(): object[] {
-    return this.stopData.getData();   
-  }
+
+  // ngOnInit(): void {
+  //   this.data = this.getData();
+  //   this.organizeData();
+  //   console.log(this.data);
+  // }
+  // private getData(): object[] {
+  //   return this.stopData.getData();   
+  // }
   private organizeData(): void {
-    for (let order of this.data) {
+    for (let order of this.allTags) {
       this.separatedStops.push({
         clientInfo: order.sender,
         associatedClient: order.recipient,
