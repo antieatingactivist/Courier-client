@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { StopComponent } from './stop/stop.component';
 import { DataService } from "../shared/data.service";
 import { ITag, IStop } from "../shared/stop-data.model"
 
@@ -23,14 +22,12 @@ export class StopListComponent implements OnInit {
       (data:ITag[]) => this.allTags = <ITag[]>data,
       (err :string) => console.error(err),
       () => {
-        console.log(this.allTags)
         this.organizeData();
-        console.log(this.separatedStops)
       }
     )
   }
 
-  private organizeData(): void {
+  private organizeData() {
     for (let order of this.allTags) {
       this.separatedStops.push({
         clientInfo: order.sender,
@@ -43,5 +40,9 @@ export class StopListComponent implements OnInit {
         level: order.level
       });
     }
+  }
+
+  click(index: number) {
+    console.log(index);
   }
 }
