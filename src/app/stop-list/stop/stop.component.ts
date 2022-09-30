@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ITag } from "../../shared/stop-data.model";
+import { IStop } from "../../shared/stop-data.model";
 
 @Component({
   selector: 'app-stop',
@@ -7,11 +7,16 @@ import { ITag } from "../../shared/stop-data.model";
   styleUrls: ['./stop.component.css']
 })
 export class StopComponent implements OnInit {
-  @Input() stop: any;
+  @Input() stop! : IStop;
   @Input() index: number = 0;
-  constructor() { }
+
+  constructor() { 
+    
+  }
+
 
   ngOnInit(): void {
+    console.log(new Date(this.stop.clientInfo.arrivalWindowEnd).toISOString(), new Date().toISOString());
   }
 
 }
