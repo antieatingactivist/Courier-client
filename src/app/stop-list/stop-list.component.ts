@@ -28,21 +28,6 @@ export class StopListComponent implements OnInit {
     )
   }
 
-  // private organizeData() {
-  //   for (let order of this.dataService.allTags) {
-  //     this.separatedStops.push({
-  //       clientInfo: order.sender,
-  //       associatedClient: order.recipient,
-  //       level: order.level
-  //     });
-  //     this.separatedStops.push({
-  //       clientInfo: order.recipient,
-  //       associatedClient: order.sender,
-  //       level: order.level
-  //     });
-  //   }
-  // }
-
   click(index: number) {
     console.log(index);
 

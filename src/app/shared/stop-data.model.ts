@@ -10,7 +10,7 @@ export interface IStop {
     level: string
 }
 
-interface IClient {
+export interface IClient {
     name: string,
     address: string,
     city: string,

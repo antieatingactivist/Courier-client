@@ -30,4 +30,7 @@ export class DataService {
       }
       return this.organizedStops;
     }
+    getSingleStop(index: number) {
+      return this.organizedStops[index];
+    }
 }
