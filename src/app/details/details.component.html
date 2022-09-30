@@ -4,7 +4,7 @@
     <div class="card-body remove-padding dark">               
         <p>{{data.clientInfo.name}}</p>
         <p>{{data.clientInfo.address}}<br>{{data.clientInfo.city}}, {{data.clientInfo.state}} {{data.clientInfo.zip}}</p>
-        <p>{{data.clientInfo.arrivalWindowStart | date: 'shortTime'}} - {{data.clientInfo.arrivalWindowEnd | date: 'shortTime'}}</p>
+        <p>{{data.clientInfo.arrivalWindowStart | date: 'shortTime'}} - {{data.clientInfo.arrivalWindowEnd | date: 'shortTime'}}<br>{{data.clientInfo.status}}</p>
         {{data.level}}
     </div>                
 </div>

@@ -44,6 +44,8 @@ const data = [
       zip: 94109,
       arrivalWindowStart: new Date("2022-12-17T09:00:00"),
       arrivalWindowEnd: new Date("2022-12-17T09:30:00"),
+      isRecipient: false,
+      status: "scheduled"
     },
     recipient: {
       name: "Clumper",
@@ -53,6 +55,8 @@ const data = [
       zip: 94109,
       arrivalWindowStart: new Date("2022-12-17T11:00:00"),
       arrivalWindowEnd: new Date("2022-12-17T11:30:00"),
+      isRecipient: true,
+      status: "scheduled"
     },
 
     level: "Rush"
@@ -66,6 +70,8 @@ const data = [
       zip: 94109,
       arrivalWindowStart: new Date("2022-12-17T10:00:00"),
       arrivalWindowEnd: new Date("2022-12-17T10:30:00"),
+      isRecipient: true,
+      status: "scheduled"
     },
     recipient: {
       name: "Zumper",
@@ -75,6 +81,8 @@ const data = [
       zip: 94109,
       arrivalWindowStart: new Date("2022-12-17T12:00:00"),
       arrivalWindowEnd: new Date("2022-12-17T12:30:00"),
+      isRecipient: false,
+      status: "scheduled"
     },
 
     level: "Regular"

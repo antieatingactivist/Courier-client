@@ -17,6 +17,8 @@ export interface IClient {
     state: string,
     zip: number,
     arrivalWindowStart: Date,
-    arrivalWindowEnd: Date
+    arrivalWindowEnd: Date,
+    isRecipient: boolean,
+    status: string
 
 }

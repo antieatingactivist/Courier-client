@@ -9,7 +9,7 @@ import { IStop } from '../shared/stop-data.model';
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit {
-  id: string = "1";
+  private id: string = "";
   data: IStop;
   constructor(
     private route: ActivatedRoute, 
