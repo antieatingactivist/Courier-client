@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from "../shared/data.service";
 import { ITag, IStop } from "../shared/stop-data.model"
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-stop-list',
@@ -8,8 +9,8 @@ import { ITag, IStop } from "../shared/stop-data.model"
   styleUrls: ['./stop-list.component.css']
 })
 export class StopListComponent implements OnInit {
-  allTags: ITag[] = [];
-  separatedStops:IStop[] = [];
+
+  data:IStop[] = [];
   
   constructor(private dataService: DataService) {}
 
@@ -19,30 +20,31 @@ export class StopListComponent implements OnInit {
 
   private getAllTags() {
     this.dataService.getAllTags().subscribe(
-      (data:ITag[]) => this.allTags = <ITag[]>data,
+      (data:ITag[]) => this.dataService.allTags = <ITag[]>data,
       (err :string) => console.error(err),
       () => {
-        this.organizeData();
+        this.data = this.dataService.getOrganizedData();
       }
     )
   }
 
-  private organizeData() {
-    for (let order of this.allTags) {
-      this.separatedStops.push({
-        clientInfo: order.sender,
-        associatedClient: order.recipient,
-        level: order.level
-      });
-      this.separatedStops.push({
-        clientInfo: order.recipient,
-        associatedClient: order.sender,
-        level: order.level
-      });
-    }
-  }
+  // private organizeData() {
+  //   for (let order of this.dataService.allTags) {
+  //     this.separatedStops.push({
+  //       clientInfo: order.sender,
+  //       associatedClient: order.recipient,
+  //       level: order.level
+  //     });
+  //     this.separatedStops.push({
+  //       clientInfo: order.recipient,
+  //       associatedClient: order.sender,
+  //       level: order.level
+  //     });
+  //   }
+  // }
 
   click(index: number) {
     console.log(index);
+
   }
 }

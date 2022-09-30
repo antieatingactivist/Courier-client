@@ -1,5 +1,5 @@
 <div class="container-fluid">
 
-    <app-stop *ngFor="let stop of separatedStops; index as i" [stop]="stop" (click)="click(i)"></app-stop>
+    <app-stop *ngFor="let stop of data; index as i" [stop]="stop" [index]="i"></app-stop>
 
 </div>

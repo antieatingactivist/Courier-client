@@ -7,7 +7,8 @@ import { DetailsComponent } from './details/details.component';
 
 const routes: Routes = [
   { path: 'stops', component: StopListComponent },
-  { path: 'details', component: DetailsComponent }
+  { path: 'details/:id', component: DetailsComponent },
+  
 ];
 
 @NgModule({
@@ -15,3 +16,10 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+
+// {
+//   path: ':id',
+//   component: ProductDetailComponent,
+//   resolve: { resolvedData: ProductResolver }
+// },

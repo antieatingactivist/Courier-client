@@ -8,6 +8,7 @@ import { ITag } from "../../shared/stop-data.model";
 })
 export class StopComponent implements OnInit {
   @Input() stop: any;
+  @Input() index: number = 0;
   constructor() { }
 
   ngOnInit(): void {
