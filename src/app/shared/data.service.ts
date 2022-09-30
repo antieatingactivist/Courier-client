@@ -8,8 +8,15 @@ import { ITag, IStop } from './stop-data.model'
 export class DataService {
     allTags: ITag[] = [];
     organizedStops: IStop[] = [];
+    date: Date = new Date();
 
-    constructor(private http: HttpClient) {  }
+    constructor(private http: HttpClient) { 
+      
+    }
+    getDate(): Date {
+      this.date = new Date();
+      return this.date;
+    }
 
     getAllTags(): Observable<ITag[]> {
         return this.http.get<ITag[]>('http://localhost:3000')    

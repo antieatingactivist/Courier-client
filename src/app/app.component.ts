@@ -9,8 +9,10 @@ import { DataService } from "./shared/data.service";
 })
 export class AppComponent {
   title = 'Courier-client';
-
-  constructor() {}
+  date = this.dataService.getDate();
+  constructor(private dataService: DataService) {
+    setInterval(() => this.date = this.dataService.getDate(), 1000);
+  }
   
 
 
