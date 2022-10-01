@@ -5,8 +5,7 @@ import { DriverComponent } from './driver.component';
 import { StopListComponent } from './stop-list/stop-list.component';
 import { DetailsComponent } from './details/details.component';
 import { StopComponent } from './stop-list/stop/stop.component';
-import { HttpClientModule } from "@angular/common/http";
-import { DataService } from './shared/data.service';
+
 
 const routes: Routes = [
   { path: '', component: DriverComponent },
