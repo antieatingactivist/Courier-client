@@ -2,12 +2,15 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 //components
-import { StopListComponent } from './stop-list/stop-list.component';
-import { DetailsComponent } from './details/details.component';
+
 
 const routes: Routes = [
-  { path: 'stops', component: StopListComponent },
-  { path: 'details/:id', component: DetailsComponent },
+  // { path: 'stops', component: StopListComponent },
+  // { path: 'details/:id', component: DetailsComponent },
+  { 
+    path: 'driver',
+    loadChildren: () => import('./driver/driver.module').then(m => m.DriverModule)
+  }
   
 ];
 
