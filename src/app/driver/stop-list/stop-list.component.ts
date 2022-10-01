@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from "../shared/data.service";
 import { ITag, IStop } from "../shared/stop-data.model"
-import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-stop-list',
