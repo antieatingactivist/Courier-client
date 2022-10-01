@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { IStop } from "../../shared/stop-data.model";
 
 @Component({
-  selector: 'app-stop',
+  selector: 'driver-stop',
   templateUrl: './stop.component.html',
   styleUrls: ['./stop.component.css']
 })

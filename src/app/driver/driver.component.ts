@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ITag } from "./shared/stop-data.model";
 import { DataService } from "./shared/data.service";
 
 @Component({

@@ -4,7 +4,7 @@ import { DataService } from '../shared/data.service';
 import { IStop } from '../shared/stop-data.model';
 
 @Component({
-  selector: 'app-details',
+  selector: 'driver-details',
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.css']
 })

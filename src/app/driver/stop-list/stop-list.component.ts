@@ -4,7 +4,7 @@ import { ITag, IStop } from "../shared/stop-data.model"
 
 
 @Component({
-  selector: 'app-stop-list',
+  selector: 'driver-stop-list',
   templateUrl: './stop-list.component.html',
   styleUrls: ['./stop-list.component.css']
 })
