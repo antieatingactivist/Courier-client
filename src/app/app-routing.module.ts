@@ -6,6 +6,10 @@ const routes: Routes = [
   { 
     path: 'driver',
     loadChildren: () => import('./driver/driver.module').then(m => m.DriverModule)
+  },
+  { 
+    path: 'dispatch',
+    loadChildren: () => import('./dispatch/dispatch.module').then(m => m.DispatchModule)
   }
   
 ];
