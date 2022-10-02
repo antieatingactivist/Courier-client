@@ -86,7 +86,7 @@
               <select class="form-control"
                       id="stateId"
                       [(ngModel)]="tag.senderState"
-                      name="state">
+                      name="senderState">
                 <option value=""
                         disabled
                         selected
@@ -191,7 +191,7 @@
                    required
                    maxlength="50"
                    [(ngModel)]="tag.recipientName"
-                   name="lastName"
+                   name="recipientName"
                    #lastNameVar="ngModel"
                    [ngClass]="{'is-invalid': (lastNameVar.touched || lastNameVar.dirty) && !lastNameVar.valid }" />
             <span class="invalid-feedback">

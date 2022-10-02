@@ -13,6 +13,25 @@ export class NewTagComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.tag = {
+      senderName : "rwerwe",
+      senderEmail : "antieatingactivist@gmail.com",
+      senderAddress : "423423 fdsfsdfsd",
+      senderCity : "fsd",
+      senderState : "CA",
+      senderZip : 43243,
+      senderWindowStart : "2022-12-05T00:02",
+      senderWindowEnd : "2022-12-05T00:30",
+      
+      recipientName : "rwerwe",
+      recipientEmail : "antieatingactivist@gmail.com",
+      recipientAddress : "53454 gdfgdf",
+      recipientCity : "hgf",
+      recipientState : "CA",
+      recipientZip : 53434,
+      recipientWindowStart : "2022-09-02T12:03",
+      recipientWindowEnd : "2022-11-24T17:05"
+    }
   }
 
   save(tagForm: NgForm): void {
