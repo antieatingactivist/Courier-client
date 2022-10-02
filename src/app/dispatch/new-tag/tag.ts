@@ -2,14 +2,22 @@
 export class Tag {
 
     constructor(
-      public firstName = '',
-      public lastName = '',
-      public email = '',
-      public sendCatalog = false,
-      public addressType = 'home',
-      public street1?: string,
-      public street2?: string,
-      public city?: string,
-      public state = '',
-      public zip?: string) { }
+      public senderName = '',
+      public senderAddress = '',
+      public senderCity = '',
+      public senderState = '',
+      public senderZip = '',
+      public senderEmail = '',
+      public senderWindowStart = '',
+      public senderWindowEnd = '',
+
+      public recipientName = '',
+      public recipientAddress = '',
+      public recipientCity = '',
+      public recipientState = '',
+      public recipientZip = '',
+      public recipientEmail = '',
+      public recipientWindowStart = '',
+      public recipientWindowEnd = '',
+    ) { }
   }
