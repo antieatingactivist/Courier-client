@@ -32,7 +32,9 @@ export class NewTagComponent implements OnInit {
       recipientState : "CA",
       recipientZip : 53434,
       recipientWindowStart : "2022-09-02T12:03",
-      recipientWindowEnd : "2022-11-24T17:05"
+      recipientWindowEnd : "2022-11-24T17:05",
+
+      level: "Rush"
     }
   }
 

@@ -19,5 +19,7 @@ export class Tag {
       public recipientEmail = '',
       public recipientWindowStart = '',
       public recipientWindowEnd = '',
+
+      public level = ""
     ) { }
   }

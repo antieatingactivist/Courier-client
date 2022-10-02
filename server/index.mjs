@@ -57,7 +57,7 @@ app.post("*", function(req, res, next) {
         status: "scheduled"
       },
   
-      level: "Rush"
+      level: req.body.level
     
   });
 
