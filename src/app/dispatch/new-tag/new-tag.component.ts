@@ -38,11 +38,11 @@ export class NewTagComponent implements OnInit {
 
   save(formData: any): void {
     const tag = <ITag>formData.form.value;
-    console.log(tag);
-    this.dataService.postTag(tag).subscribe(
-      (data: ITag ) => console.log(data),
-      (err: any ) => console.log(err)
-    )
+
+    this.dataService.postTag(tag).subscribe({
+      next: (data: ITag) => {console.log(data)},
+      error: (err: any) => {console.error(err)}
+    })
   }
 
 }

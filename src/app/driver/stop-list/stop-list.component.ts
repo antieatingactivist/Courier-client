@@ -19,13 +19,13 @@ export class StopListComponent implements OnInit {
   }
 
   private getAllTags() {
-    this.dataService.getAllTags().subscribe(
-      (data:ITag[]) => this.dataService.allTags = <ITag[]>data,
-      (err :string) => console.error(err),
-      () => {
+    this.dataService.getAllTags().subscribe({
+      next: (data:ITag[]) => this.dataService.allTags = <ITag[]>data,
+      error: (err :string) => console.error(err),
+      complete: () => {
         this.data = this.dataService.getOrganizedData();
       }
-    )
+  })
   }
 
   click(index: number) {
