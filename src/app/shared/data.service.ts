@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from 'rxjs';
 import { ITag, IStop } from './stop-data.model'
 @Injectable({
@@ -19,7 +19,15 @@ export class DataService {
     }
 
     getAllTags(): Observable<ITag[]> {
-        return this.http.get<ITag[]>('http://localhost:3000')    
+      return this.http.get<ITag[]>('http://localhost:3000')    
+    }
+    postTag(newTag: ITag) {
+      return this.http.post<ITag>('http://localhost:3000', newTag, {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+          "Access-Control-Allow-Origin" : '*'
+        })
+      })
     }
     getOrganizedData() {
       this.organizedStops = [];

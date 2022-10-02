@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from "../shared/data.service";
-import { ITag, IStop } from "../shared/stop-data.model"
+import { DataService } from "../../shared/data.service";
+import { ITag, IStop } from "../../shared/stop-data.model"
 
 
 @Component({

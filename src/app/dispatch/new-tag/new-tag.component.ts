@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Tag } from './tag';
+import { DataService } from 'src/app/shared/data.service';
+import { ITag } from 'src/app/shared/stop-data.model';
 
 @Component({
   selector: 'app-new-tag',
@@ -10,7 +12,7 @@ import { Tag } from './tag';
 export class NewTagComponent implements OnInit {
   tag = new Tag();
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
     this.tag = {
@@ -34,9 +36,13 @@ export class NewTagComponent implements OnInit {
     }
   }
 
-  save(tagForm: NgForm): void {
-    console.log(tagForm.form);
-    console.log('Saved: ' + JSON.stringify(tagForm.value));
+  save(formData: any): void {
+    const tag = <ITag>formData.form.value;
+    console.log(tag);
+    this.dataService.postTag(tag).subscribe(
+      (data: ITag ) => console.log(data),
+      (err: any ) => console.log(err)
+    )
   }
 
 }
