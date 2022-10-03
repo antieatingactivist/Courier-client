@@ -4,15 +4,18 @@ import { DispatchComponent } from './dispatch.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NewTagComponent } from './new-tag/new-tag.component';
 import { FormsModule } from '@angular/forms';
+import { BoardComponent } from './board/board.component';
 
 const routes: Routes = [
   { path: '', component: DispatchComponent },
   { path: 'newtag', component: NewTagComponent },
+  { path: 'board', component: BoardComponent }
 ]
 
 @NgModule({
   declarations: [
-    NewTagComponent
+    NewTagComponent,
+    BoardComponent
   ],
   imports: [
     CommonModule,
