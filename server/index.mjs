@@ -33,7 +33,10 @@ app.put("/:id", function(req, res, next) {
   // console.log(data.data)
   for (let tag of data.data) {
     if (tag.id === +req.params.id) {
-      tag.assignedTo = req.body.driver;
+
+      if (req.body.driver === "") tag.assignedTo = null;
+      else tag.assignedTo = +req.body.driver;
+      
     }
   }
 

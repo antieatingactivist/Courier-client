@@ -27,7 +27,12 @@ export class DetailsComponent implements OnInit {
   }
 
   save(formData: NgForm): void {
-    const tag = <ITag>formData.form.value;
+    let driver = formData.form.value;
+
+    this.dataService.assignToDriver(driver, this.tag.id).subscribe({
+      next: (data: any) => {console.log(data)},
+      error: (err: any) => {console.error(err)}
+    })
   }
 
 

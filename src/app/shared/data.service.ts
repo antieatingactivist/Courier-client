@@ -29,6 +29,14 @@ export class DataService {
         })
       })
     }
+    assignToDriver(driver: number, tagId: number) {
+      return this.http.put(`http://localhost:3000/${tagId}`, driver, {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+          "Access-Control-Allow-Origin" : '*'
+        })
+      })
+    }
     getOrganizedData() {
       this.organizedStops = [];
       for (let order of this.allTags) {
