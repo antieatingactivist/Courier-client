@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col">
-        <a routerLink="/details/{{index}}" routerLinkActive="active" ariaCurrentWhenActive="page" class="remove-link-style">
+        <a routerLink="/dispatch/details/{{index}}" routerLinkActive="active" ariaCurrentWhenActive="page" class="remove-link-style">
             <div class="card add-margin add-border">               
                 <div class="card-body remove-padding dark">               
                     <p>{{stop.clientInfo.name}}</p>
@@ -8,6 +8,7 @@
                     <p>{{stop.clientInfo.arrivalWindowStart | date: 'shortTime'}} - {{stop.clientInfo.arrivalWindowEnd | date: 'shortTime'}}<br>
                     {{stop.clientInfo.status}}</p>
                     {{stop.level}}
+                    <p>{{stop.id}}</p>
                 </div>                
             </div>
         </a>

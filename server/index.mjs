@@ -6,6 +6,8 @@ import data from './db.json' assert { type: 'json' };
 import fs from 'fs';
 import cors from 'cors';
 
+let count = data.count;
+
 
 dotenv.config();
 const __filename = fileURLToPath(import.meta.url);
@@ -24,7 +26,7 @@ app.use(cors());
 // Routes
 app.get("*", function(req, res, next) {
 
-  res.json(data)
+  res.json(data.data)
 });
 
 app.post("*", function(req, res, next) {
@@ -32,7 +34,7 @@ app.post("*", function(req, res, next) {
   res.json(`${req.method} request received`);
   // console.log(req.body);
 
-  data.push({
+  data.data.push({
     
       sender: {
         name: req.body.senderName,
@@ -57,11 +59,12 @@ app.post("*", function(req, res, next) {
         status: "scheduled"
       },
   
-      level: req.body.level
+      level: req.body.level,
+      id: count
     
   });
 
-  fs.writeFile("./db.json", JSON.stringify(data, null, 2), (err) => err ? console.error(err) : console.log("success"));
+  fs.writeFile("./db.json", JSON.stringify({count: ++count, data: data.data}, null, 2), (err) => err ? console.error(err) : console.log("success"));
 
 });
 

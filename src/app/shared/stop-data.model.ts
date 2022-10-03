@@ -1,13 +1,15 @@
 export interface ITag {
     sender: IClient,
     recipient: IClient,
-    level: string
+    level: string,
+    id: number
 }
 
 export interface IStop {
     associatedClient: IClient,
     clientInfo: IClient,
-    level: string
+    level: string,
+    id: number
 }
 
 export interface IClient {

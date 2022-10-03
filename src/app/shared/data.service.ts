@@ -35,12 +35,14 @@ export class DataService {
         this.organizedStops.push({
           clientInfo: order.sender,
           associatedClient: order.recipient,
-          level: order.level
+          level: order.level,
+          id: order.id,
         });
         this.organizedStops.push({
           clientInfo: order.recipient,
           associatedClient: order.sender,
-          level: order.level
+          level: order.level,
+          id: order.id+.01
         });
       }
       return this.organizedStops;
