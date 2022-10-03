@@ -16,21 +16,21 @@ export class NewTagComponent implements OnInit {
 
   ngOnInit(): void {
     this.tag = {
-      senderName : "rwerwe",
+      senderName : "Krumper",
       senderEmail : "antieatingactivist@gmail.com",
-      senderAddress : "423423 fdsfsdfsd",
-      senderCity : "fsd",
+      senderAddress : "44 Montgomery st.",
+      senderCity : "San Francisco",
       senderState : "CA",
-      senderZip : 43243,
+      senderZip : 94104,
       senderWindowStart : "2022-12-05T00:02",
       senderWindowEnd : "2022-12-05T00:30",
       
-      recipientName : "rwerwe",
+      recipientName : "Frumper",
       recipientEmail : "antieatingactivist@gmail.com",
-      recipientAddress : "53454 gdfgdf",
-      recipientCity : "hgf",
+      recipientAddress : "888 Brannon st.",
+      recipientCity : "San Francisco",
       recipientState : "CA",
-      recipientZip : 53434,
+      recipientZip : 94103,
       recipientWindowStart : "2022-09-02T12:03",
       recipientWindowEnd : "2022-11-24T17:05",
 
@@ -38,7 +38,7 @@ export class NewTagComponent implements OnInit {
     }
   }
 
-  save(formData: any): void {
+  save(formData: NgForm): void {
     const tag = <ITag>formData.form.value;
 
     this.dataService.postTag(tag).subscribe({
