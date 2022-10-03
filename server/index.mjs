@@ -60,7 +60,8 @@ app.post("*", function(req, res, next) {
       },
   
       level: req.body.level,
-      id: count
+      id: count,
+      assignedTo: null
     
   });
 

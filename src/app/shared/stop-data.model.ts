@@ -2,7 +2,8 @@ export interface ITag {
     sender: IClient,
     recipient: IClient,
     level: string,
-    id: number
+    id: number,
+    assignedTo: number | null
 }
 
 export interface IStop {
