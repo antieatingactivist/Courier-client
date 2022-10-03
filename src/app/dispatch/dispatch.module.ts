@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NewTagComponent } from './new-tag/new-tag.component';
 import { FormsModule } from '@angular/forms';
 import { BoardComponent } from './board/board.component';
+import { StopComponent } from './board/stop/stop.component';
 
 const routes: Routes = [
   { path: '', component: DispatchComponent },
@@ -15,7 +16,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     NewTagComponent,
-    BoardComponent
+    BoardComponent,
+    StopComponent
   ],
   imports: [
     CommonModule,

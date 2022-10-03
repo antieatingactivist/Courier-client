@@ -25,7 +25,7 @@ export class StopListComponent implements OnInit {
       complete: () => {
         this.data = this.dataService.getOrganizedData();
       }
-  })
+    })
   }
 
   click(index: number) {
