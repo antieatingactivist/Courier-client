@@ -2,10 +2,17 @@
 
 <div class="card add-border add-margin">               
     <div class="card-body remove-padding dark">               
-        <p>{{data.clientInfo.name}}</p>
-        <p>{{data.clientInfo.address}}<br>{{data.clientInfo.city}}, {{data.clientInfo.state}} {{data.clientInfo.zip}}</p>
-        <p>{{data.clientInfo.arrivalWindowStart | date: 'shortTime'}} - {{data.clientInfo.arrivalWindowEnd | date: 'shortTime'}}<br>{{data.clientInfo.status}}</p>
-        {{data.level}}
-        <p>{{data.id}}</p>
+        <p>{{tag.sender.name}}</p>
+        <p>{{tag.sender.address}}<br>{{tag.sender.city}}, {{tag.sender.state}} {{tag.sender.zip}}</p>
+        <p>{{tag.sender.arrivalWindowStart | date: 'shortTime'}} - {{tag.sender.arrivalWindowEnd | date: 'shortTime'}}<br>
+        {{tag.sender.status}}</p>
+        ----
+        <p>{{tag.recipient.name}}</p>
+        <p>{{tag.recipient.address}}<br>{{tag.recipient.city}}, {{tag.recipient.state}} {{tag.recipient.zip}}</p>
+        <p>{{tag.recipient.arrivalWindowStart | date: 'shortTime'}} - {{tag.recipient.arrivalWindowEnd | date: 'shortTime'}}<br>
+        {{tag.recipient.status}}</p>
+        ----
+        <p>{{tag.level}}</p>
+        <p>{{tag.id}}</p>
     </div>                
 </div>

@@ -3,12 +3,18 @@
         <a routerLink="/dispatch/details/{{index}}" routerLinkActive="active" ariaCurrentWhenActive="page" class="remove-link-style">
             <div class="card add-margin add-border">               
                 <div class="card-body remove-padding dark">               
-                    <p>{{stop.clientInfo.name}}</p>
-                    <p>{{stop.clientInfo.address}}<br>{{stop.clientInfo.city}}, {{stop.clientInfo.state}} {{stop.clientInfo.zip}}</p>
-                    <p>{{stop.clientInfo.arrivalWindowStart | date: 'shortTime'}} - {{stop.clientInfo.arrivalWindowEnd | date: 'shortTime'}}<br>
-                    {{stop.clientInfo.status}}</p>
-                    {{stop.level}}
-                    <p>{{stop.id}}</p>
+                    <p>{{tag.sender.name}}</p>
+                    <p>{{tag.sender.address}}<br>{{tag.sender.city}}, {{tag.sender.state}} {{tag.sender.zip}}</p>
+                    <p>{{tag.sender.arrivalWindowStart | date: 'shortTime'}} - {{tag.sender.arrivalWindowEnd | date: 'shortTime'}}<br>
+                    {{tag.sender.status}}</p>
+                    ----
+                    <p>{{tag.recipient.name}}</p>
+                    <p>{{tag.recipient.address}}<br>{{tag.recipient.city}}, {{tag.recipient.state}} {{tag.recipient.zip}}</p>
+                    <p>{{tag.recipient.arrivalWindowStart | date: 'shortTime'}} - {{tag.recipient.arrivalWindowEnd | date: 'shortTime'}}<br>
+                    {{tag.recipient.status}}</p>
+                    ----
+                    <p>{{tag.level}}</p>
+                    <p>{{tag.id}}</p>
                 </div>                
             </div>
         </a>

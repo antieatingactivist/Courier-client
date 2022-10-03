@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IStop } from "../../../shared/stop-data.model";
+import { ITag } from "../../../shared/stop-data.model";
 
 @Component({
   selector: 'dispatch-stop',
@@ -7,7 +7,7 @@ import { IStop } from "../../../shared/stop-data.model";
   styleUrls: ['./stop.component.css']
 })
 export class StopComponent implements OnInit {
-  @Input() stop! : IStop;
+  @Input() tag! : ITag;
   @Input() index: number = 0;
 
   constructor() { 
@@ -16,7 +16,7 @@ export class StopComponent implements OnInit {
 
 
   ngOnInit(): void {
-    console.log(new Date(this.stop.clientInfo.arrivalWindowEnd).toISOString(), new Date().toISOString());
+    // console.log(new Date(this.stop.clientInfo.arrivalWindowEnd).toISOString(), new Date().toISOString());
   }
 
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../../shared/data.service';
-import { IStop } from '../../shared/stop-data.model';
+import { ITag } from '../../shared/stop-data.model';
 
 @Component({
   selector: 'driver-details',
@@ -10,13 +10,13 @@ import { IStop } from '../../shared/stop-data.model';
 })
 export class DetailsComponent implements OnInit {
   private id: string = "";
-  data: IStop;
+  tag: ITag;
   constructor(
     private route: ActivatedRoute, 
     private dataService: DataService
   ) { 
     this.id = this.route.snapshot.paramMap.get('id')!;
-    this.data = this.dataService.getSingleStop(+this.id);
+    this.tag = this.dataService.getSingleTag(+this.id);
   }
 
   ngOnInit(): void {

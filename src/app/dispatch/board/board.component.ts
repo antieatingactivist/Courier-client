@@ -10,7 +10,7 @@ import { ITag, IStop } from "../../shared/stop-data.model"
 export class BoardComponent implements OnInit {
 
 
-  data:IStop[] = [];
+  data:ITag[] = [];
   
   constructor(private dataService: DataService) {}
 
@@ -22,7 +22,7 @@ export class BoardComponent implements OnInit {
       next: (data:ITag[]) => this.dataService.allTags = <ITag[]>data,
       error: (err :string) => console.error(err),
       complete: () => {
-        this.data = this.dataService.getOrganizedData();
+        this.data = this.dataService.allTags;
       }
     })
   }

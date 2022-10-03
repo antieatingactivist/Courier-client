@@ -50,4 +50,7 @@ export class DataService {
     getSingleStop(index: number) {
       return this.organizedStops[index];
     }
+    getSingleTag(index: number) {
+      return this.allTags[index];
+    }
 }
