@@ -24,12 +24,25 @@ app.use(cors());
 
 
 // Routes
-app.get("*", function(req, res, next) {
+app.get("/", function(req, res, next) {
 
   res.json(data.data)
 });
 
-app.post("*", function(req, res, next) {
+app.put("/:id", function(req, res, next) {
+  // console.log(data.data)
+  for (let tag of data.data) {
+    if (tag.id === +req.params.id) {
+      tag.assignedTo = req.body.driver;
+    }
+  }
+
+  res.json(data.data);
+
+  fs.writeFile("./db.json", JSON.stringify({data: data.data}, null, 2), (err) => err ? console.error(err) : console.log("success"));
+})
+
+app.post("/", function(req, res, next) {
 
   res.json(`${req.method} request received`);
   // console.log(req.body);

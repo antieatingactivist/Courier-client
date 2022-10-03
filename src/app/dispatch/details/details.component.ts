@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../../shared/data.service';
 import { ITag } from '../../shared/stop-data.model';
+import { NgForm } from '@angular/forms';
+import { AssignedTo } from './assignedTo';
 
 @Component({
   selector: 'driver-details',
@@ -11,6 +13,7 @@ import { ITag } from '../../shared/stop-data.model';
 export class DetailsComponent implements OnInit {
   private id: string = "";
   tag: ITag;
+  assignedTo = new AssignedTo();
   constructor(
     private route: ActivatedRoute, 
     private dataService: DataService
@@ -20,6 +23,11 @@ export class DetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.assignedTo.driver = <string><unknown>this.tag.assignedTo;
+  }
+
+  save(formData: NgForm): void {
+    const tag = <ITag>formData.form.value;
   }
 
 
