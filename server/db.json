@@ -22,7 +22,7 @@
         "arrivalWindowEnd": "2022-12-17T11:30:00",
         "isRecipient": true
       },
-      "status": "complete",
+      "status": "picked-up",
       "level": "Rush",
       "id": 100006,
       "assignedTo": 100

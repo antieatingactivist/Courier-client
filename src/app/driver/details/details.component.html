@@ -1,7 +1,7 @@
 
 
 <div class="card add-border add-margin">     
-    <div class="card-header dark ready">
+    <div class="card-header dark {{status}}">
         {{data.clientInfo.name}}
     </div>            
     <div class="card-body remove-padding dark">               
@@ -9,6 +9,8 @@
         <p>{{data.clientInfo.arrivalWindowStart | date: 'shortTime'}} - {{data.clientInfo.arrivalWindowEnd | date: 'shortTime'}}</p>
         {{data.level}}
         <p>{{data.id}}</p>
+        {{status}}
+        <br>
         
         <button *ngIf="!data.clientInfo.isRecipient" type="button" class="btn btn-primary mr-6" (click)="click()">Pick Up</button>
         <button *ngIf="data.clientInfo.isRecipient" type="button" class="btn btn-primary mr-6" (click)="click()">Drop Off</button>    
