@@ -9,7 +9,7 @@ import { StopComponent } from './stop-list/stop/stop.component';
 
 const routes: Routes = [
   { path: '', component: DriverComponent },
-  { path: 'stops', component: StopListComponent },
+  { path: 'stops/:driverNumber', component: StopListComponent },
   { path: 'details/:id', component: DetailsComponent },
 ]
 

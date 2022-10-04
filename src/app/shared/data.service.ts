@@ -37,21 +37,25 @@ export class DataService {
         })
       })
     }
-    getOrganizedData() {
+    getOrganizedData(driverNumber?: number) {
       this.organizedStops = [];
-      for (let order of this.allTags) {
-        this.organizedStops.push({
-          clientInfo: order.sender,
-          associatedClient: order.recipient,
-          level: order.level,
-          id: order.id,
-        });
-        this.organizedStops.push({
-          clientInfo: order.recipient,
-          associatedClient: order.sender,
-          level: order.level,
-          id: order.id+.01
-        });
+      for (let tag of this.allTags) {
+
+        if (tag.assignedTo === driverNumber || driverNumber === null) {
+
+          this.organizedStops.push({
+            clientInfo: tag.sender,
+            associatedClient: tag.recipient,
+            level: tag.level,
+            id: tag.id,
+          });
+          this.organizedStops.push({
+            clientInfo: tag.recipient,
+            associatedClient: tag.sender,
+            level: tag.level,
+            id: tag.id+.01
+          });
+        }
       }
       return this.organizedStops;
     }

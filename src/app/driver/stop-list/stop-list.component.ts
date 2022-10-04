@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from "../../shared/data.service";
-import { ITag, IStop } from "../../shared/stop-data.model"
+import { ITag, IStop } from "../../shared/stop-data.model";
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -9,27 +10,34 @@ import { ITag, IStop } from "../../shared/stop-data.model"
   styleUrls: ['./stop-list.component.css']
 })
 export class StopListComponent implements OnInit {
+  private driverNumber: string;
 
+  
   data:IStop[] = [];
   
-  constructor(private dataService: DataService) {}
-
-  ngOnInit() {
-    this.getAllTags();
+  constructor(
+    private dataService: DataService, 
+    private route: ActivatedRoute, 
+  ) {
+    this.driverNumber = this.route.snapshot.paramMap.get("driverNumber")!;
   }
 
-  private getAllTags() {
+  ngOnInit() {
+    this.getAllTags(+this.driverNumber);
+
+    
+  }
+
+  private getAllTags(driverNumber: number) {
     this.dataService.getAllTags().subscribe({
       next: (data:ITag[]) => this.dataService.allTags = <ITag[]>data,
       error: (err :string) => console.error(err),
       complete: () => {
-        this.data = this.dataService.getOrganizedData();
+        this.data = this.dataService.getOrganizedData(driverNumber);
       }
     })
   }
 
-  click(index: number) {
-    console.log(index);
 
-  }
+ 
 }
