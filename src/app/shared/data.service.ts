@@ -19,10 +19,10 @@ export class DataService {
     }
 
     getAllTags(): Observable<ITag[]> {
-      return this.http.get<ITag[]>('http://localhost:3000')    
+      return this.http.get<ITag[]>('http://10.0.0.126:3000')    
     }
     postTag(newTag: ITag) {
-      return this.http.post<ITag>('http://localhost:3000', newTag, {
+      return this.http.post<ITag>('http://10.0.0.126:3000', newTag, {
         headers: new HttpHeaders({
           'Content-Type': 'application/json',
           "Access-Control-Allow-Origin" : '*'
@@ -30,7 +30,7 @@ export class DataService {
       })
     }    
     changeStatus(status: string, tagId: number) {
-      return this.http.put(`http://localhost:3000/${tagId}`, {status: status}, {
+      return this.http.put(`http://10.0.0.126:3000/${tagId}`, {status: status}, {
         headers: new HttpHeaders({
           'Content-Type': 'application/json',
           "Access-Control-Allow-Origin" : '*'
@@ -38,7 +38,7 @@ export class DataService {
       })
     }
     assignToDriver(driver: number, tagId: number) {
-      return this.http.put(`http://localhost:3000/${tagId}`, driver, {
+      return this.http.put(`http://10.0.0.126:3000/${tagId}`, driver, {
         headers: new HttpHeaders({
           'Content-Type': 'application/json',
           "Access-Control-Allow-Origin" : '*'
