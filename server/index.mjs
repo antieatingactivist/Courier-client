@@ -42,7 +42,7 @@ app.put("/:id", function(req, res, next) {
 
   res.json(data.data);
 
-  fs.writeFile("./db.json", JSON.stringify({data: data.data}, null, 2), (err) => err ? console.error(err) : console.log("success"));
+  fs.writeFile("./db.json", JSON.stringify({count: count, data: data.data}, null, 2), (err) => err ? console.error(err) : console.log("success"));
 })
 
 app.post("/", function(req, res, next) {
