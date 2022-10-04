@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../../shared/data.service';
 import { IStop } from '../../shared/stop-data.model';
-
+import { Location } from '@angular/common'
 
 @Component({
   selector: 'driver-details',
@@ -13,7 +13,8 @@ export class DetailsComponent implements OnInit {
   private id: string = "";
   data: IStop;
   constructor(
-    private route: ActivatedRoute, 
+    private route: ActivatedRoute,
+    private location: Location,
     private dataService: DataService
   ) { 
     this.id = this.route.snapshot.paramMap.get('id')!;
@@ -34,7 +35,8 @@ export class DetailsComponent implements OnInit {
     this.dataService.changeStatus(status, Math.floor(this.data.id)).subscribe({
       next: (data: any) => {console.log(data)},
       error: (err: any) => {console.error(err)}
-    })
+    });
+    this.location.back();
   }
 
 
