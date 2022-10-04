@@ -60,8 +60,7 @@ app.post("/", function(req, res, next) {
         zip: req.body.senderZip,
         arrivalWindowStart: new Date(req.body.senderWindowStart),
         arrivalWindowEnd: new Date(req.body.senderWindowEnd),
-        isRecipient: false,
-        status: "scheduled"
+        isRecipient: false
       },
       recipient: {
         name: req.body.recipientName,
@@ -71,12 +70,12 @@ app.post("/", function(req, res, next) {
         zip: req.body.recipientZip,
         arrivalWindowStart: new Date(req.body.recipientWindowStart),
         arrivalWindowEnd: new Date(req.body.recipientWindowEnd),
-        isRecipient: true,
-        status: "scheduled"
+        isRecipient: true
       },
   
       level: req.body.level,
       id: count,
+      status: "scheduled",
       assignedTo: null
     
   });

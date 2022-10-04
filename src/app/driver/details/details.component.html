@@ -6,8 +6,16 @@
     </div>            
     <div class="card-body remove-padding dark">               
         <p>{{data.clientInfo.address}}<br>{{data.clientInfo.city}}, {{data.clientInfo.state}} {{data.clientInfo.zip}}</p>
-        <p>{{data.clientInfo.arrivalWindowStart | date: 'shortTime'}} - {{data.clientInfo.arrivalWindowEnd | date: 'shortTime'}}<br>{{data.clientInfo.status}}</p>
+        <p>{{data.clientInfo.arrivalWindowStart | date: 'shortTime'}} - {{data.clientInfo.arrivalWindowEnd | date: 'shortTime'}}</p>
         {{data.level}}
         <p>{{data.id}}</p>
-    </div>                
+        
+        <button *ngIf="!data.clientInfo.isRecipient" type="button" class="btn btn-primary mr-6">Pick Up</button>
+        <button *ngIf="data.clientInfo.isRecipient" type="button" class="btn btn-primary mr-6">Drop Off</button>    
+    </div>
+
+  
+    
+
+            
 </div>

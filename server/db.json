@@ -10,8 +10,7 @@
         "zip": 94109,
         "arrivalWindowStart": "2022-12-17T09:00:00",
         "arrivalWindowEnd": "2022-12-17T09:30:00",
-        "isRecipient": false,
-        "status": "scheduled"
+        "isRecipient": false
       },
       "recipient": {
         "name": "Clumper",
@@ -21,66 +20,12 @@
         "zip": 94109,
         "arrivalWindowStart": "2022-12-17T11:00:00",
         "arrivalWindowEnd": "2022-12-17T11:30:00",
-        "isRecipient": true,
-        "status": "scheduled"
+        "isRecipient": true
       },
+      "status": "scheduled",
       "level": "Rush",
       "id": 100006,
       "assignedTo": 100
-    },
-    {
-      "sender": {
-        "name": "Krumper",
-        "address": "44 Montgomery st.",
-        "city": "San Francisco",
-        "state": "CA",
-        "zip": 94104,
-        "arrivalWindowStart": "2022-12-05T08:02:00.000Z",
-        "arrivalWindowEnd": "2022-12-05T08:30:00.000Z",
-        "isRecipient": false,
-        "status": "scheduled"
-      },
-      "recipient": {
-        "name": "Frumper",
-        "address": "888 Brannon st.",
-        "city": "San Francisco",
-        "state": "CA",
-        "zip": 94103,
-        "arrivalWindowStart": "2022-09-02T19:03:00.000Z",
-        "arrivalWindowEnd": "2022-11-25T01:05:00.000Z",
-        "isRecipient": true,
-        "status": "scheduled"
-      },
-      "level": "Rush",
-      "id": 100017,
-      "assignedTo": 100
-    },
-    {
-      "sender": {
-        "name": "Krumper",
-        "address": "44 Montgomery st.",
-        "city": "San Francisco",
-        "state": "CA",
-        "zip": 94104,
-        "arrivalWindowStart": "2022-12-05T08:02:00.000Z",
-        "arrivalWindowEnd": "2022-12-05T08:30:00.000Z",
-        "isRecipient": false,
-        "status": "scheduled"
-      },
-      "recipient": {
-        "name": "Frumper",
-        "address": "888 Brannon st.",
-        "city": "San Francisco",
-        "state": "CA",
-        "zip": 94103,
-        "arrivalWindowStart": "2022-09-02T19:03:00.000Z",
-        "arrivalWindowEnd": "2022-11-25T01:05:00.000Z",
-        "isRecipient": true,
-        "status": "scheduled"
-      },
-      "level": "Rush",
-      "id": 100018,
-      "assignedTo": null
     }
   ]
 }

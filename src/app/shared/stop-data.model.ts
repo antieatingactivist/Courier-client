@@ -2,6 +2,7 @@ export interface ITag {
     sender: IClient,
     recipient: IClient,
     level: string,
+    status: string,
     id: number,
     assignedTo: number | null
 }
@@ -21,7 +22,6 @@ export interface IClient {
     zip: number,
     arrivalWindowStart: Date,
     arrivalWindowEnd: Date,
-    isRecipient: boolean,
-    status: string
+    isRecipient: boolean
 
 }

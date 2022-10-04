@@ -6,15 +6,17 @@
                     <p>{{tag.sender.name}}</p>
                     <p>{{tag.sender.address}}<br>{{tag.sender.city}}, {{tag.sender.state}} {{tag.sender.zip}}</p>
                     <p>{{tag.sender.arrivalWindowStart | date: 'shortTime'}} - {{tag.sender.arrivalWindowEnd | date: 'shortTime'}}<br>
-                    {{tag.sender.status}}</p>
+                    </p>
                     ----
                     <p>{{tag.recipient.name}}</p>
                     <p>{{tag.recipient.address}}<br>{{tag.recipient.city}}, {{tag.recipient.state}} {{tag.recipient.zip}}</p>
                     <p>{{tag.recipient.arrivalWindowStart | date: 'shortTime'}} - {{tag.recipient.arrivalWindowEnd | date: 'shortTime'}}<br>
-                    {{tag.recipient.status}}</p>
+                    </p>
                     ----
+                    <p>{{tag.status}}</p>
                     <p>{{tag.level}}</p>
                     <p>{{tag.id}}</p>
+                    
                 </div>                
             </div>
         </a>
