@@ -47,33 +47,60 @@ export class DataService {
     }
 
     getOrganizedData(driverNumber?: number) {
-      this.organizedStops = [];
-      for (let tag of this.allTags) {
+      let tags: ITag[] = this.allTags;
+      // this.organizedStops = [];
+      if (driverNumber) {
+        tags = this.filterByDriver(tags, driverNumber);
+      }
 
-        if (tag.assignedTo === driverNumber || driverNumber === null) {
+      tags = this.sortByStatus(tags);
 
-          this.organizedStops.push({
+      this.organizedStops = this.splitTagIntoStops(tags);
+
+      return this.organizedStops;
+    }
+
+    getSingleStop(index: number) {
+      return this.organizedStops[index];
+    }
+
+    getSingleTag(index: number) {
+      return this.allTags[index];
+    }
+
+    private filterByDriver(tags: ITag[], driverNumber: number) {
+      return tags.filter(tag => tag.assignedTo === driverNumber);
+    }
+
+    private sortByStatus(tags: ITag[]) {
+      return tags.sort((a, b) => compare(a, b));
+      function compare(a: ITag, b: ITag) {
+        if (a.status === "complete" && b.status !== "complete") {
+          return 1
+        } else {
+          return -1
+        }
+      }
+    }
+
+    private splitTagIntoStops(tags: ITag[]) {
+      const stops: IStop[] = [];
+      for (let tag of tags) {
+          stops.push({
             clientInfo: tag.sender,
             associatedClient: tag.recipient,
             level: tag.level,
             id: tag.id,
             status: tag.status
           });
-          this.organizedStops.push({
+          stops.push({
             clientInfo: tag.recipient,
             associatedClient: tag.sender,
             level: tag.level,
             id: tag.id+.01,
             status: tag.status
           });
-        }
       }
-      return this.organizedStops;
-    }
-    getSingleStop(index: number) {
-      return this.organizedStops[index];
-    }
-    getSingleTag(index: number) {
-      return this.allTags[index];
+      return stops;
     }
 }
