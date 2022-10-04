@@ -2,14 +2,32 @@
     /* margin:0 !important; */
     padding: 5px !important;
 }
+.remove-radius{
+    border-radius: 0;
+}
 .add-margin {
-    margin: 5px !important;
+    margin: 20px 5px 5px 5px !important;
 
 }
 
 .add-border {
     border: 1px solid #555555;
     overflow: hidden !important;
+    
+}
+
+.sender {
+    border-radius: 8px 8px 0px 0px;
+    margin-bottom: -20px !important;
+}
+
+.recipient {
+    border-radius: 0px 0px 8px 8px;
+    border-top: 0;
+}
+
+.smaller-text {
+    font-size: .9em;
 }
 
 .remove-link-style {

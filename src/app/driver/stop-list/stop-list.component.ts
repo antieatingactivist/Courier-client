@@ -11,8 +11,6 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class StopListComponent implements OnInit {
   private driverNumber: string;
-
-  
   data:IStop[] = [];
   
   constructor(
@@ -23,12 +21,10 @@ export class StopListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getAllTags(+this.driverNumber);
-
-    
+    this.getAllTagsAndOrganize(+this.driverNumber);
   }
 
-  private getAllTags(driverNumber: number) {
+  private getAllTagsAndOrganize(driverNumber: number) {
     this.dataService.getAllTags().subscribe({
       next: (data:ITag[]) => this.dataService.allTags = <ITag[]>data,
       error: (err :string) => console.error(err),
@@ -38,6 +34,4 @@ export class StopListComponent implements OnInit {
     })
   }
 
-
- 
 }

@@ -10,6 +10,7 @@ export class StopComponent implements OnInit {
   @Input() stop! : IStop;
   @Input() index: number = 0;
   status: string = "not-ready";
+  role: string = "sender";
 
   constructor() { 
     
@@ -18,6 +19,7 @@ export class StopComponent implements OnInit {
 
   ngOnInit(): void {
     
+    if (this.stop.clientInfo.isRecipient) this.role = "recipient";
 
     this.status = this.stop.status;
     if (this.status === "ready") {
