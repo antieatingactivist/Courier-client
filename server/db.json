@@ -76,7 +76,7 @@
       },
       "level": "Rush",
       "id": 100019,
-      "status": "ready",
+      "status": "picked-up",
       "assignedTo": 100
     },
     {
@@ -102,7 +102,7 @@
       },
       "level": "Rush",
       "id": 100020,
-      "status": "ready",
+      "status": "picked-up",
       "assignedTo": 100
     }
   ]
