@@ -15,3 +15,27 @@
 .remove-link-style {
     text-decoration: none;
 }
+
+.not-ready {
+    background-color: #000000;
+}
+
+.early {
+    background-color: #0099ff
+}
+
+.almost-ready {
+    background-color: #d627cd
+}
+
+.ready {
+    background-color: #00a534
+}
+
+.almost-late {
+    background-color: #969901
+}
+
+.late {
+    background-color: #d10000
+}
