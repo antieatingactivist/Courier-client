@@ -9,6 +9,7 @@ import { IStop } from "../../../shared/stop-data.model";
 export class StopComponent implements OnInit {
   @Input() stop! : IStop;
   @Input() index: number = 0;
+  status: string = "not-ready";
 
   constructor() { 
     
@@ -17,6 +18,8 @@ export class StopComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(new Date(this.stop.clientInfo.arrivalWindowEnd).toISOString(), new Date().toISOString());
+
+    this.status = this.stop.status;
   }
 
 }

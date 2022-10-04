@@ -11,7 +11,8 @@ export interface IStop {
     associatedClient: IClient,
     clientInfo: IClient,
     level: string,
-    id: number
+    id: number,
+    status: string,
 }
 
 export interface IClient {

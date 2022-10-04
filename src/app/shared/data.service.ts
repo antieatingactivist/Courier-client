@@ -57,12 +57,14 @@ export class DataService {
             associatedClient: tag.recipient,
             level: tag.level,
             id: tag.id,
+            status: tag.status
           });
           this.organizedStops.push({
             clientInfo: tag.recipient,
             associatedClient: tag.sender,
             level: tag.level,
-            id: tag.id+.01
+            id: tag.id+.01,
+            status: tag.status
           });
         }
       }
