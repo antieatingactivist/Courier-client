@@ -20,16 +20,17 @@ export class StopComponent implements OnInit {
     
 
     this.status = this.stop.status;
-    if (this.status == "ready") {
+    if (this.status === "ready") {
       this.status = this.determineEarlyOrLate();
     }
 
-    if ((this.status !== "picked-up") && this.stop.clientInfo.isRecipient) {
+    if ((this.status === "ready") && this.stop.clientInfo.isRecipient) {
       this.status = "not-ready";
     }    
     if ((this.status === "picked-up") && this.stop.clientInfo.isRecipient) {
       this.status = this.determineEarlyOrLate();
     }
+    
   }
 
   private determineEarlyOrLate() {

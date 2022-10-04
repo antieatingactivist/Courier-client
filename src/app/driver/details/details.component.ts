@@ -28,7 +28,7 @@ export class DetailsComponent implements OnInit {
     if (this.status === "ready" ) {
       this.status = this.determineEarlyOrLate();
     }
-    if ((this.status !== "picked-up") && this.data.clientInfo.isRecipient) {
+    if ((this.status === "ready") && this.data.clientInfo.isRecipient) {
       this.status = "not-ready";
     }    
     if ((this.status === "picked-up") && this.data.clientInfo.isRecipient) {
