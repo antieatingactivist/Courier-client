@@ -30,12 +30,16 @@ app.get("/", function(req, res, next) {
 });
 
 app.put("/:id", function(req, res, next) {
-  // console.log(data.data)
+  console.log(req.body);
   for (let tag of data.data) {
     if (tag.id === +req.params.id) {
-
-      if (req.body.driver === "") tag.assignedTo = null;
-      else tag.assignedTo = +req.body.driver;
+      if (req.body.driver) {
+        if (req.body.driver === "") tag.assignedTo = null;
+        else tag.assignedTo = +req.body.driver;
+      }
+      if (req.body.status) {
+        tag.status = req.body.status;
+      }
       
     }
   }

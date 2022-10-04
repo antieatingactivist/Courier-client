@@ -10,8 +10,8 @@
         {{data.level}}
         <p>{{data.id}}</p>
         
-        <button *ngIf="!data.clientInfo.isRecipient" type="button" class="btn btn-primary mr-6">Pick Up</button>
-        <button *ngIf="data.clientInfo.isRecipient" type="button" class="btn btn-primary mr-6">Drop Off</button>    
+        <button *ngIf="!data.clientInfo.isRecipient" type="button" class="btn btn-primary mr-6" (click)="click()">Pick Up</button>
+        <button *ngIf="data.clientInfo.isRecipient" type="button" class="btn btn-primary mr-6" (click)="click()">Drop Off</button>    
     </div>
 
   

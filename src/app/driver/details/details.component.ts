@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../../shared/data.service';
 import { IStop } from '../../shared/stop-data.model';
 
+
 @Component({
   selector: 'driver-details',
   templateUrl: './details.component.html',
@@ -20,6 +21,20 @@ export class DetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  click(): void {
+    console.log(this.data.id);
+    let status: string;
+    if (this.data.id - Math.floor(this.data.id) === 0) {
+      status = "picked-up";
+    } else {
+      status = "complete";
+    }
+    this.dataService.changeStatus(status, Math.floor(this.data.id)).subscribe({
+      next: (data: any) => {console.log(data)},
+      error: (err: any) => {console.error(err)}
+    })
   }
 
 

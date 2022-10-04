@@ -28,6 +28,14 @@ export class DataService {
           "Access-Control-Allow-Origin" : '*'
         })
       })
+    }    
+    changeStatus(status: string, tagId: number) {
+      return this.http.put(`http://localhost:3000/${tagId}`, {status: status}, {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+          "Access-Control-Allow-Origin" : '*'
+        })
+      })
     }
     assignToDriver(driver: number, tagId: number) {
       return this.http.put(`http://localhost:3000/${tagId}`, driver, {
@@ -37,6 +45,7 @@ export class DataService {
         })
       })
     }
+
     getOrganizedData(driverNumber?: number) {
       this.organizedStops = [];
       for (let tag of this.allTags) {
