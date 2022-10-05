@@ -16,6 +16,7 @@ export class DetailsComponent implements OnInit {
   data: IStop;
   status: string = "not-ready";
   addressString = "";
+  platform = "google";
   constructor(
     private route: ActivatedRoute,
     private location: Location,
@@ -38,6 +39,15 @@ export class DetailsComponent implements OnInit {
     if ((this.status === "picked-up") && this.data.clientInfo.isRecipient) {
       this.status = this.determineEarlyOrLate();
     }
+
+
+    if (navigator.userAgent.indexOf("Mac")!=-1) this.platform="apple";
+    if (navigator.userAgent.indexOf("iPhone")!=-1) this.platform="apple";
+    if (navigator.userAgent.indexOf("iPad")!=-1) this.platform="apple";
+    if (navigator.userAgent.indexOf("iPod")!=-1) this.platform="apple";
+
+
+
 
     
   }
