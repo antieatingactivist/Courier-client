@@ -3,8 +3,14 @@
     top: 0;
 }
 
+.top-margin {
+    position: absolute;
+    margin-top:50px;
+}
+
 .full-height {
     height: calc(100vh - 20px);
+    width: 100vw;
 }
 
 .remove-padding{

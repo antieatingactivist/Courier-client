@@ -1,10 +1,5 @@
-.fixed {
-    background-color: #00000000;
-    border: none;
-    outline: none;
-    color: #ffffff;
-    position: fixed;
-    z-index: 100;
-    right: 0;
-    
+.top-margin {
+    position: absolute;
+    margin-top:50px;
 }
+

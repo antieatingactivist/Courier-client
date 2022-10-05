@@ -1,35 +1,37 @@
-
-
-<div class="card add-border add-margin full-height">     
-    <div class="card-header dark {{status}}">
-        {{data.clientInfo.name}}
-    </div>            
-    <div class="card-body remove-padding dark">   
-        <a href="http://maps.{{platform}}.com/?q={{addressString}}" >            
-            <p>{{data.clientInfo.address}}<br>{{data.clientInfo.city}}, {{data.clientInfo.state}} {{data.clientInfo.zip}}</p>
-        </a>
-        <p>{{data.clientInfo.arrivalWindowStart | date: 'shortTime'}} - {{data.clientInfo.arrivalWindowEnd | date: 'shortTime'}}</p>
-        {{data.level}}
-        <p>{{data.id}}</p>
-        {{status}}
-        <br>
-        
-        
-        <button *ngIf="!data.clientInfo.isRecipient" type="button" class="btn btn-primary mr-6" (click)="click()">Pick Up</button>
-        <button *ngIf="data.clientInfo.isRecipient" type="button" class="btn btn-primary mr-6" (click)="click()">Drop Off</button>  
-        
-
-     
-    </div>
-
-  
-    
-
+<driver-menu></driver-menu>
+<div class=" top-margin">
+    <div class="card add-border add-margin full-height">     
+        <div class="card-header dark {{status}}">
+            {{data.clientInfo.name}}
+        </div>            
+        <div class="card-body remove-padding dark">   
+            <a href="http://maps.{{platform}}.com/?q={{addressString}}" >            
+                <p>{{data.clientInfo.address}}<br>{{data.clientInfo.city}}, {{data.clientInfo.state}} {{data.clientInfo.zip}}</p>
+            </a>
+            <p>{{data.clientInfo.arrivalWindowStart | date: 'shortTime'}} - {{data.clientInfo.arrivalWindowEnd | date: 'shortTime'}}</p>
+            {{data.level}}
+            <p>{{data.id}}</p>
+            {{status}}
+            <br>
             
-</div>
+            
+            <button *ngIf="!data.clientInfo.isRecipient" type="button" class="btn btn-primary mr-6" (click)="click()">Pick Up</button>
+            <button *ngIf="data.clientInfo.isRecipient" type="button" class="btn btn-primary mr-6" (click)="click()">Drop Off</button>  
+            
 
-<ng-template [ngIf]="showSignatureScreen">
-    <div class="static">
-        <driver-signature (showSignatureScreen)="closeSignatureScreen()"></driver-signature>
+        
+        </div>
+
+    
+        
+
+                
     </div>
-</ng-template>
+
+    <ng-template [ngIf]="showSignatureScreen">
+        <div class="static">
+            <driver-signature (showSignatureScreen)="closeSignatureScreen()"></driver-signature>
+        </div>
+    </ng-template>
+
+</div>

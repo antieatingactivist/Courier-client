@@ -9,6 +9,8 @@ import { FormsModule } from '@angular/forms';
 import { SignatureComponent } from './details/signature/signature.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MenuComponent } from './menu/menu.component';
 
 
 const routes: Routes = [
@@ -24,12 +26,14 @@ const routes: Routes = [
     DetailsComponent,
     StopComponent,
     SignatureComponent,
+    MenuComponent,
   ],
   imports: [ 
     CommonModule,
     FormsModule,
     MatMenuModule,
     MatIconModule,
+    MatToolbarModule,
     RouterModule.forChild(routes)
   ]
 })
