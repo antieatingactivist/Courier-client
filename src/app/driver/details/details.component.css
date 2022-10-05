@@ -1,3 +1,8 @@
+.static {
+    position: fixed;
+    top: 0;
+}
+
 .full-height {
     height: calc(100vh - 20px);
 }

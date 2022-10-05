@@ -6,6 +6,7 @@ import { Location } from '@angular/common';
 
 
 
+
 @Component({
   selector: 'driver-details',
   templateUrl: './details.component.html',
@@ -17,6 +18,7 @@ export class DetailsComponent implements OnInit {
   status: string = "not-ready";
   addressString = "";
   platform = "google";
+  showSignatureScreen = false;
   constructor(
     private route: ActivatedRoute,
     private location: Location,
@@ -53,6 +55,31 @@ export class DetailsComponent implements OnInit {
   }
 
   click(): void {
+    // console.log(this.data.id);
+    // let status: string;
+    // if (this.data.id - Math.floor(this.data.id) === 0) {
+    //   status = "picked-up";
+    // } else {
+    //   status = "complete";
+    // }
+    // this.dataService.changeStatus(status, Math.floor(this.data.id)).subscribe({
+    //   next: (data: any) => {console.log(data)},
+    //   error: (err: any) => {console.error(err)}
+    // });
+    // this.location.back();
+    this.showSignatureScreen = !this.showSignatureScreen;
+    console.log(this.showSignatureScreen)
+  }
+
+  closeSignatureScreen() {
+    this.showSignatureScreen = false;
+    console.log(this.showSignatureScreen);
+    this.submit();
+    this.location.back();
+    
+  }
+
+  private submit() {
     console.log(this.data.id);
     let status: string;
     if (this.data.id - Math.floor(this.data.id) === 0) {
@@ -64,7 +91,7 @@ export class DetailsComponent implements OnInit {
       next: (data: any) => {console.log(data)},
       error: (err: any) => {console.error(err)}
     });
-    this.location.back();
+    
   }
 
   private determineEarlyOrLate() {
