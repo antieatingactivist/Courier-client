@@ -10,6 +10,7 @@ import { DataService } from '../../shared/data.service';
 })
 export class MenuComponent implements OnInit {
   @Output() hideComplete = new EventEmitter<object>();
+  options = this.dataService.options;
   constructor(private location: Location, private dataService: DataService) {}
 
   ngOnInit(): void {
@@ -20,7 +21,7 @@ export class MenuComponent implements OnInit {
   }
 
   click(option: object) {
-    // this.dataService.hideComplete();
+    
     console.log(this.dataService)
     this.hideComplete.emit(option);
   }

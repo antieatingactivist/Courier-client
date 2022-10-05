@@ -14,9 +14,13 @@
   </mat-toolbar>
 
   <mat-menu #menu="matMenu">
-    <button mat-menu-item (click)="click({hideComplete: true})">
+    <button mat-menu-item (click)="click({hideComplete: true})" *ngIf="!this.options.hideComplete">
       <mat-icon>dialpad</mat-icon>
-      <span>Hide Complete</span>
+      <span>Hide Completed Stops</span>
+    </button>
+    <button mat-menu-item (click)="click({hideComplete: false})" *ngIf="this.options.hideComplete">
+      <mat-icon>dialpad</mat-icon>
+      <span>Show Completed Stops</span>
     </button>
     <button mat-menu-item disabled>
       <mat-icon>voicemail</mat-icon>
