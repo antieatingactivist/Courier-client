@@ -1,3 +1,7 @@
+.full-height {
+    height: calc(100vh - 20px);
+}
+
 .remove-padding{
     /* margin:0 !important; */
     padding: 5px !important;
