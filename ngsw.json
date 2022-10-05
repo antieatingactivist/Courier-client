@@ -1,0 +1,83 @@
+{
+  "configVersion": 1,
+  "timestamp": 1665005026110,
+  "index": "/Courier-client/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/Courier-client/794.4c906f4dac2d7992.js",
+        "/Courier-client/favicon.ico",
+        "/Courier-client/index.html",
+        "/Courier-client/main.a76aeb5f7183d95f.js",
+        "/Courier-client/manifest.webmanifest",
+        "/Courier-client/polyfills.9d1d24a7f053e429.js",
+        "/Courier-client/runtime.5d93e05d7f598644.js",
+        "/Courier-client/styles.d7991cef0edd23a4.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/Courier-client/assets/icons/icon-128x128.png",
+        "/Courier-client/assets/icons/icon-144x144.png",
+        "/Courier-client/assets/icons/icon-152x152.png",
+        "/Courier-client/assets/icons/icon-192x192.png",
+        "/Courier-client/assets/icons/icon-384x384.png",
+        "/Courier-client/assets/icons/icon-512x512.png",
+        "/Courier-client/assets/icons/icon-72x72.png",
+        "/Courier-client/assets/icons/icon-96x96.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/Courier-client/794.4c906f4dac2d7992.js": "7da1cb0a8cc0a632378ef1fe8ab9833caea6bfe9",
+    "/Courier-client/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/Courier-client/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/Courier-client/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/Courier-client/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/Courier-client/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/Courier-client/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/Courier-client/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/Courier-client/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/Courier-client/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/Courier-client/index.html": "0247d423398d1268a80ad2796b725d0c668383b4",
+    "/Courier-client/main.a76aeb5f7183d95f.js": "9054dcd793fd8bfa2c2fd39f3e4b09e3d7124941",
+    "/Courier-client/manifest.webmanifest": "663893f55b13860dda642c227d6260dbdbacd9f4",
+    "/Courier-client/polyfills.9d1d24a7f053e429.js": "b3ab8aaeae47a555c290bd3e25af606e6030e891",
+    "/Courier-client/runtime.5d93e05d7f598644.js": "830c02764a3db5ff1f7b2eac0731b4abe211f302",
+    "/Courier-client/styles.d7991cef0edd23a4.css": "4ee85b2b11266b9bc4190f0f2bbad0defc4aa6df"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
