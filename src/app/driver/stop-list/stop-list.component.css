@@ -1,0 +1,10 @@
+.fixed {
+    background-color: #00000000;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    position: fixed;
+    z-index: 100;
+    right: 0;
+    
+}
