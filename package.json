@@ -6,7 +6,8 @@
     "start": "concurrently \"ng serve --host 0.0.0.0\" \"cd server && node index.mjs\"",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "deploy" : "ng deploy --base-href=/Courier-client/"
   },
   "private": true,
   "dependencies": {
@@ -36,6 +37,7 @@
     "@angular/compiler-cli": "^14.2.5",
     "@angular/localize": "^14.2.5",
     "@types/jasmine": "~4.0.0",
+    "angular-cli-ghpages": "^1.0.3",
     "concurrently": "^7.4.0",
     "jasmine-core": "~4.3.0",
     "karma": "~6.4.0",
