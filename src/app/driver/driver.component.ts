@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from "../shared/data.service";
 import { NgForm } from '@angular/forms';
-// import { Driver } from './driver';
 import { Router } from '@angular/router';
 
 @Component({
@@ -17,7 +16,7 @@ export class DriverComponent implements OnInit {
 
 
   constructor(private dataService: DataService, private router: Router) {}
-  
+
   ngOnInit() {
     this.dataService.getDrivers().subscribe({
       next: (data:number[]) => this.drivers = <number[]>data,
@@ -26,7 +25,7 @@ export class DriverComponent implements OnInit {
   }
   save(formData: NgForm): void {
     let driver = formData.form.value.driverNumber;
-    console.log(formData.form.value);
+
     this.router.navigate(['stops', driver]);
   }
   

@@ -6,6 +6,8 @@ import { StopListComponent } from './stop-list/stop-list.component';
 import { DetailsComponent } from './details/details.component';
 import { StopComponent } from './stop-list/stop/stop.component';
 import { FormsModule } from '@angular/forms';
+import { MapComponent } from './map/map.component';
+import { GoogleMapsModule } from '@angular/google-maps'
 
 
 const routes: Routes = [
@@ -19,11 +21,13 @@ const routes: Routes = [
     DriverComponent,
     StopListComponent,
     DetailsComponent,
-    StopComponent
+    StopComponent,
+    MapComponent
   ],
   imports: [ 
     CommonModule,
     FormsModule,
+    GoogleMapsModule,
     RouterModule.forChild(routes)
   ]
 })

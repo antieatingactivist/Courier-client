@@ -11,6 +11,7 @@
         <p>{{data.id}}</p>
         {{status}}
         <br>
+        <driver-map></driver-map>
         
         <button *ngIf="!data.clientInfo.isRecipient" type="button" class="btn btn-primary mr-6" (click)="click()">Pick Up</button>
         <button *ngIf="data.clientInfo.isRecipient" type="button" class="btn btn-primary mr-6" (click)="click()">Drop Off</button>    
