@@ -68,19 +68,18 @@ export class DetailsComponent implements OnInit {
     // });
     // this.location.back();
     this.showSignatureScreen = !this.showSignatureScreen;
-    console.log(this.showSignatureScreen)
+
   }
 
   closeSignatureScreen() {
     this.showSignatureScreen = false;
-    console.log(this.showSignatureScreen);
     this.submit();
     this.location.back();
     
   }
 
   private submit() {
-    console.log(this.data.id);
+
     let status: string;
     if (this.data.id - Math.floor(this.data.id) === 0) {
       status = "picked-up";

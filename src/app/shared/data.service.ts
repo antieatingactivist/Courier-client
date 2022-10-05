@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from 'rxjs';
-import { ITag, IStop } from './stop-data.model'
+import { ITag, IStop, IOptions } from './stop-data.model'
 @Injectable({
   providedIn: 'root'
 })
@@ -9,6 +9,9 @@ export class DataService {
     allTags: ITag[] = [];
     organizedStops: IStop[] = [];
     date: Date = new Date();
+    options: IOptions = {
+      hideComplete: false
+    }
 
     constructor(private http: HttpClient) { 
       
@@ -49,7 +52,7 @@ export class DataService {
       })
     }
 
-    getOrganizedData(driverNumber?: number) {
+    getOrganizedData(driverNumber?: number ) {
       let tags: ITag[] = this.allTags;
       // this.organizedStops = [];
       if (driverNumber) {
@@ -57,6 +60,10 @@ export class DataService {
       }
 
       tags = this.sortByStatus(tags);
+
+      if (this.options.hideComplete! === true) {
+        tags = tags.filter(tag => tag.status !== "complete");
+      }
 
       this.organizedStops = this.splitTagIntoStops(tags);
 

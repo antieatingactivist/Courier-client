@@ -26,3 +26,7 @@ export interface IClient {
     isRecipient: boolean
 
 }
+
+export interface IOptions {
+    hideComplete: boolean
+}

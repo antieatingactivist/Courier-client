@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { DataService } from "../../shared/data.service";
-import { ITag, IStop } from "../../shared/stop-data.model";
+import { ITag, IStop, IOptions } from "../../shared/stop-data.model";
 import { ActivatedRoute } from '@angular/router';
 
 
@@ -13,6 +13,8 @@ import { ActivatedRoute } from '@angular/router';
 export class StopListComponent implements OnInit {
   private driverNumber: string;
   data:IStop[] = [];
+
+
   
   constructor(
     private dataService: DataService, 
@@ -25,7 +27,16 @@ export class StopListComponent implements OnInit {
     this.getAllTagsAndOrganize(+this.driverNumber);
   }
 
+  changeOptions(event: any) {
+    for (let key in event) {
+      this.dataService.options[key as keyof IOptions] = event[key as keyof IOptions];
+    }
+    this.getAllTagsAndOrganize(+this.driverNumber);
+  }
+
+
   private getAllTagsAndOrganize(driverNumber: number) {
+
     this.dataService.getAllTags().subscribe({
       next: (data:ITag[]) => this.dataService.allTags = <ITag[]>data,
       error: (err :string) => console.error(err),

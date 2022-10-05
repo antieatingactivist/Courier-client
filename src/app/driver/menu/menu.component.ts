@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Location } from '@angular/common';
+import { DataService } from '../../shared/data.service';
+
 
 @Component({
   selector: 'driver-menu',
@@ -7,8 +9,8 @@ import { Location } from '@angular/common';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-
-  constructor(private location: Location) {}
+  @Output() hideComplete = new EventEmitter<object>();
+  constructor(private location: Location, private dataService: DataService) {}
 
   ngOnInit(): void {
   }
@@ -16,5 +18,13 @@ export class MenuComponent implements OnInit {
   back() {
     this.location.back();
   }
+
+  click(option: object) {
+    // this.dataService.hideComplete();
+    console.log(this.dataService)
+    this.hideComplete.emit(option);
+  }
+
+
 
 }

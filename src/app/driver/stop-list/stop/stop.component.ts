@@ -19,7 +19,7 @@ export class StopComponent implements OnInit {
 
 
   ngOnInit(): void {
-    if (this.stop.status === "complete") this.show = false;
+    // if (this.stop.status === "complete") this.show = false;
     if (this.stop.clientInfo.isRecipient) this.role = "recipient";
 
     this.status = this.stop.status;
@@ -43,10 +43,7 @@ export class StopComponent implements OnInit {
     const currentTime = new Date().getTime();
     const earliest = new Date(this.stop.clientInfo.arrivalWindowStart).getTime();
     const latest = new Date(this.stop.clientInfo.arrivalWindowEnd).getTime();
-    console.log(
-       
-      currentTime - latest
-    );
+
  
     if (earliest - currentTime > 0) {
       status = "early";
