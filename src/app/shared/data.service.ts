@@ -59,7 +59,12 @@ export class DataService {
         tags = this.filterByDriver(tags, driverNumber);
       }
 
+      tags = this.sortByTimeDue(tags);
+      
       tags = this.sortByStatus(tags);
+
+
+
 
       if (this.options.hideComplete! === true) {
         tags = tags.filter(tag => tag.status !== "complete");
@@ -86,6 +91,18 @@ export class DataService {
       return tags.sort((a, b) => compare(a, b));
       function compare(a: ITag, b: ITag) {
         if (a.status === "complete" && b.status !== "complete") {
+          return 1
+        } else {
+          return -1
+        }
+      }
+    }
+
+    private sortByTimeDue(tags: ITag[]) {
+
+      return tags.sort((a, b) => compare(a, b));
+      function compare(a: ITag, b: ITag) {
+        if (new Date(a.sender.arrivalWindowEnd).getTime() < new Date(b.sender.arrivalWindowEnd).getTime()) {
           return 1
         } else {
           return -1
