@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from "../../shared/data.service";
 import { ITag, IStop } from "../../shared/stop-data.model";
 import { ActivatedRoute } from '@angular/router';
+import { MenuComponent } from '../menu/menu.component';
 
 
 @Component({

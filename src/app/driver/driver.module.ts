@@ -6,7 +6,8 @@ import { StopListComponent } from './stop-list/stop-list.component';
 import { DetailsComponent } from './details/details.component';
 import { StopComponent } from './stop-list/stop/stop.component';
 import { FormsModule } from '@angular/forms';
-import { SignatureComponent } from './details/signature/signature.component'
+import { SignatureComponent } from './details/signature/signature.component';
+import { MenuComponent } from './menu/menu.component'
 
 
 const routes: Routes = [
@@ -21,7 +22,8 @@ const routes: Routes = [
     StopListComponent,
     DetailsComponent,
     StopComponent,
-    SignatureComponent
+    SignatureComponent,
+    MenuComponent
   ],
   imports: [ 
     CommonModule,
