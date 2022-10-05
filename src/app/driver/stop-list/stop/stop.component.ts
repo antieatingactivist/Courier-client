@@ -11,6 +11,7 @@ export class StopComponent implements OnInit {
   @Input() index: number = 0;
   status: string = "not-ready";
   role: string = "sender";
+  show: boolean = true;
 
   constructor() { 
     
@@ -18,7 +19,7 @@ export class StopComponent implements OnInit {
 
 
   ngOnInit(): void {
-    
+    if (this.stop.status === "complete") this.show = false;
     if (this.stop.clientInfo.isRecipient) this.role = "recipient";
 
     this.status = this.stop.status;

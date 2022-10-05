@@ -1,3 +1,4 @@
+<ng-template [ngIf]="show">
 <div class="row">
     <div class="col">
         <a routerLink="/details/{{index}}" routerLinkActive="active" ariaCurrentWhenActive="page" class="remove-link-style">
@@ -11,10 +12,12 @@
                     </p>
                     {{stop.level}}<br>
                     {{status}}
+                  
                 </div>                
             </div>
         </a>
     </div>
 </div>
+</ng-template>
 
 
