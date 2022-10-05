@@ -7,8 +7,8 @@ import { DriverModule } from './driver/driver.module';
 
 import { HttpClientModule } from "@angular/common/http";
 import { DispatchComponent } from './dispatch/dispatch.component';
-// import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,9 @@ import { DispatchComponent } from './dispatch/dispatch.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    DriverModule
+    DriverModule,
+    BrowserAnimationsModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
