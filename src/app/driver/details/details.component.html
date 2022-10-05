@@ -4,17 +4,20 @@
     <div class="card-header dark {{status}}">
         {{data.clientInfo.name}}
     </div>            
-    <div class="card-body remove-padding dark">               
-        <p>{{data.clientInfo.address}}<br>{{data.clientInfo.city}}, {{data.clientInfo.state}} {{data.clientInfo.zip}}</p>
+    <div class="card-body remove-padding dark">   
+        <a href="http://maps.apple.com/?q={{addressString}}" target="_blank">            
+            <p>{{data.clientInfo.address}}<br>{{data.clientInfo.city}}, {{data.clientInfo.state}} {{data.clientInfo.zip}}</p>
+        </a>
         <p>{{data.clientInfo.arrivalWindowStart | date: 'shortTime'}} - {{data.clientInfo.arrivalWindowEnd | date: 'shortTime'}}</p>
         {{data.level}}
         <p>{{data.id}}</p>
         {{status}}
         <br>
-        <driver-map></driver-map>
+        
         
         <button *ngIf="!data.clientInfo.isRecipient" type="button" class="btn btn-primary mr-6" (click)="click()">Pick Up</button>
         <button *ngIf="data.clientInfo.isRecipient" type="button" class="btn btn-primary mr-6" (click)="click()">Drop Off</button>    
+        <driver-map></driver-map>
     </div>
 
   

@@ -15,6 +15,7 @@ export class DetailsComponent implements OnInit {
   private id: string = "";
   data: IStop;
   status: string = "not-ready";
+  addressString = "";
   constructor(
     private route: ActivatedRoute,
     private location: Location,
@@ -22,6 +23,7 @@ export class DetailsComponent implements OnInit {
   ) { 
     this.id = this.route.snapshot.paramMap.get('id')!;
     this.data = this.dataService.getSingleStop(+this.id);
+    this.addressString = this.generateAddressString();
     
   }
 
@@ -36,6 +38,8 @@ export class DetailsComponent implements OnInit {
     if ((this.status === "picked-up") && this.data.clientInfo.isRecipient) {
       this.status = this.determineEarlyOrLate();
     }
+
+    
   }
 
   click(): void {
@@ -79,6 +83,13 @@ export class DetailsComponent implements OnInit {
 
     return status;
     
+  }
+
+  private generateAddressString() {
+    let string = `${this.data.clientInfo.address} ${this.data.clientInfo.city} ${this.data.clientInfo.state} ${this.data.clientInfo.zip}`;
+    string = string.replace(/\ /g, "+");
+
+    return string;
   }
 
 
