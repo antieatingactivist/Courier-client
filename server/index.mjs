@@ -29,6 +29,11 @@ app.get("/", function(req, res, next) {
   res.json(data.data)
 });
 
+app.get("/drivers", function(req, res, next) {
+
+  res.json(data.drivers)
+});
+
 app.put("/:id", function(req, res, next) {
   console.log(req.body);
   for (let tag of data.data) {
@@ -46,7 +51,7 @@ app.put("/:id", function(req, res, next) {
 
   res.json(data.data);
 
-  fs.writeFile("./db.json", JSON.stringify({count: count, data: data.data}, null, 2), (err) => err ? console.error(err) : console.log("success"));
+  fs.writeFile("./db.json", JSON.stringify({drivers: drivers, count: count, data: data.data}, null, 2), (err) => err ? console.error(err) : console.log("success"));
 })
 
 app.post("/", function(req, res, next) {
@@ -84,7 +89,7 @@ app.post("/", function(req, res, next) {
     
   });
 
-  fs.writeFile("./db.json", JSON.stringify({count: ++count, data: data.data}, null, 2), (err) => err ? console.error(err) : console.log("success"));
+  fs.writeFile("./db.json", JSON.stringify({drivers: drivers, count: ++count, data: data.data}, null, 2), (err) => err ? console.error(err) : console.log("success"));
 
 });
 

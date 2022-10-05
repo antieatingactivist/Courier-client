@@ -18,6 +18,9 @@ export class DataService {
       return this.date;
     }
 
+    getDrivers(): Observable<number[]> {
+      return this.http.get<number[]>('http://10.0.0.126:3000/drivers')    
+    }
     getAllTags(): Observable<ITag[]> {
       return this.http.get<ITag[]>('http://10.0.0.126:3000')    
     }

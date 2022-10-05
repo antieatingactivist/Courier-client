@@ -5,6 +5,7 @@ import { DriverComponent } from './driver.component';
 import { StopListComponent } from './stop-list/stop-list.component';
 import { DetailsComponent } from './details/details.component';
 import { StopComponent } from './stop-list/stop/stop.component';
+import { FormsModule } from '@angular/forms';
 
 
 const routes: Routes = [
@@ -22,6 +23,7 @@ const routes: Routes = [
   ],
   imports: [ 
     CommonModule,
+    FormsModule,
     RouterModule.forChild(routes)
   ]
 })

@@ -1,23 +1,23 @@
 <ng-template [ngIf]="show">
-<div class="row">
-    <div class="col">
-        <a routerLink="/details/{{index}}" routerLinkActive="active" ariaCurrentWhenActive="page" class="remove-link-style">
-            <div class="card add-margin add-border {{role}}">    
-                <div class="card-header dark remove-radius {{status}}">
-                    {{stop.clientInfo.name}}
-                </div>           
-                <div class="card-body remove-padding smaller-text dark  {{status}}">   
-                    <p>{{stop.clientInfo.address}}<br>{{stop.clientInfo.city}}, {{stop.clientInfo.state}} {{stop.clientInfo.zip}}</p>
-                    <p>{{stop.clientInfo.arrivalWindowStart | date: 'shortTime'}} - {{stop.clientInfo.arrivalWindowEnd | date: 'shortTime'}}<br>
-                    </p>
-                    {{stop.level}}<br>
-                    {{status}}
-                  
-                </div>                
-            </div>
-        </a>
+    <div class="row">
+        <div class="col">
+            <a routerLink="/details/{{index}}" routerLinkActive="active" ariaCurrentWhenActive="page" class="remove-link-style">
+                <div class="card add-margin add-border {{role}}">    
+                    <div class="card-header dark remove-radius {{status}}">
+                        {{stop.clientInfo.name}}
+                    </div>           
+                    <div class="card-body remove-padding smaller-text dark  {{status}}">   
+                        <p>{{stop.clientInfo.address}}<br>{{stop.clientInfo.city}}, {{stop.clientInfo.state}} {{stop.clientInfo.zip}}</p>
+                        <p>{{stop.clientInfo.arrivalWindowStart | date: 'shortTime'}} - {{stop.clientInfo.arrivalWindowEnd | date: 'shortTime'}}<br>
+                        </p>
+                        {{stop.level}}<br>
+                        {{status}}
+                    
+                    </div>                
+                </div>
+            </a>
+        </div>
     </div>
-</div>
 </ng-template>
 
 
