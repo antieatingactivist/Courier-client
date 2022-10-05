@@ -34,33 +34,35 @@
     text-decoration: none;
 }
 
-.not-ready {
+.card-header.not-ready {
     background-color: #000000;
 }
 
-.early {
-    background-color: #0099ff
+.card-header.early {
+    background-color: #0099ff;
 }
 
-.almost-ready {
-    background-color: #d627cd
+.card-header.almost-ready {
+    background-color: #d627cd;
 }
 
-.ready {
-    background-color: #00a534
+.card-header.ready {
+    background-color: #00a534;
 }
 
-.almost-late {
-    background-color: #969901
+.card-header.almost-late {
+    background-color: #969901;
 }
 
-.late {
-    background-color: #d10000
+.card-header.late {
+    background-color: #d10000;
+}
+.card-header.picked-up, .card-header.complete  {
+    background-color: #656565;
+    color: #999999;
 }
 
-.complete {
-    background-color: #656565
-}
-.picked-up {
-    background-color: #656565
+.card-body.picked-up, .card-body.complete {
+    background-color: #3c3c3c;
+    color: #858585;
 }

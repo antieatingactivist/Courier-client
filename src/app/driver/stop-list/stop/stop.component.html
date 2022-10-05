@@ -5,7 +5,7 @@
                 <div class="card-header dark remove-radius {{status}}">
                     {{stop.clientInfo.name}}
                 </div>           
-                <div class="card-body remove-padding smaller-text dark">   
+                <div class="card-body remove-padding smaller-text dark  {{status}}">   
                     <p>{{stop.clientInfo.address}}<br>{{stop.clientInfo.city}}, {{stop.clientInfo.state}} {{stop.clientInfo.zip}}</p>
                     <p>{{stop.clientInfo.arrivalWindowStart | date: 'shortTime'}} - {{stop.clientInfo.arrivalWindowEnd | date: 'shortTime'}}<br>
                     </p>
