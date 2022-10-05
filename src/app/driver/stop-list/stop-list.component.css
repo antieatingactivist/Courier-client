@@ -1,5 +1,5 @@
-.top-margin {
+.bottom-margin {
     position: absolute;
-    margin-top:50px;
+    padding-bottom:100px;
 }
 

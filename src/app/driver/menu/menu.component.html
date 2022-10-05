@@ -1,10 +1,10 @@
-<mat-toolbar class="fixed">
-    <button mat-icon-button class="example-icon favorite-icon dark" aria-label="Example icon-button with heart icon">
+<mat-toolbar class="fixed dark">
+    <button (click)="back()" mat-icon-button class="example-icon favorite-icon transparent" aria-label="Example icon-button with heart icon">
         <mat-icon>arrow_back</mat-icon>
       </button>
     
     <span class="example-spacer"></span>
-    <button mat-icon-button [matMenuTriggerFor]="menu" class="example-icon dark" aria-label="Example icon-button with menu icon">
+    <button mat-icon-button [matMenuTriggerFor]="menu" class="example-icon transparent" aria-label="Example icon-button with menu icon">
       <mat-icon>menu</mat-icon>
     </button>
  

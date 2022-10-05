@@ -2,11 +2,15 @@
 
     position: fixed;
     z-index: 100;
-    right: 0;
+    bottom: 0px;
     
 }
 
 .dark {
+    background-color: #000000;
+}
+
+.transparent {
     background-color: #00000000;
     border: none;
     outline: none;
