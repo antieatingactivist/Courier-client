@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../../shared/data.service';
 import { IStop } from '../../shared/stop-data.model';
-import { Location } from '@angular/common'
+import { Location } from '@angular/common';
+
+
 
 @Component({
   selector: 'driver-details',
