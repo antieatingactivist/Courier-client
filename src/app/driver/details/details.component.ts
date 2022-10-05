@@ -27,12 +27,12 @@ export class DetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.status = this.data.status;
-    if (this.status === "ready" ) {
-      this.status = this.determineEarlyOrLate();
-    }
     if ((this.status === "ready") && this.data.clientInfo.isRecipient) {
       this.status = "not-ready";
     }    
+    if (this.status === "ready" ) {
+      this.status = this.determineEarlyOrLate();
+    }
     if ((this.status === "picked-up") && this.data.clientInfo.isRecipient) {
       this.status = this.determineEarlyOrLate();
     }

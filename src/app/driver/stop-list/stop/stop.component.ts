@@ -23,13 +23,15 @@ export class StopComponent implements OnInit {
     if (this.stop.clientInfo.isRecipient) this.role = "recipient";
 
     this.status = this.stop.status;
+    
+    if ((this.status === "ready") && this.stop.clientInfo.isRecipient) {
+      this.status = "not-ready";
+    }  
     if (this.status === "ready") {
       this.status = this.determineEarlyOrLate();
     }
 
-    if ((this.status === "ready") && this.stop.clientInfo.isRecipient) {
-      this.status = "not-ready";
-    }    
+     
     if ((this.status === "picked-up") && this.stop.clientInfo.isRecipient) {
       this.status = this.determineEarlyOrLate();
     }

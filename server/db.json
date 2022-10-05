@@ -27,7 +27,7 @@
         "arrivalWindowEnd": "2022-12-17T11:30:00",
         "isRecipient": true
       },
-      "status": "complete",
+      "status": "ready",
       "level": "Rush",
       "id": 100006,
       "assignedTo": 100
@@ -81,7 +81,7 @@
       },
       "level": "Rush",
       "id": 100019,
-      "status": "picked-up",
+      "status": "ready",
       "assignedTo": 100
     },
     {
@@ -107,7 +107,7 @@
       },
       "level": "Rush",
       "id": 100020,
-      "status": "picked-up",
+      "status": "ready",
       "assignedTo": 100
     }
   ]
