@@ -3,12 +3,24 @@
         "id": 1,
         "status": "ready",
         "level": "Rush",
+        "sender": 1,
+        "recipient": 2,
+        "recipientWindowStart": "2022-12-17T09:02:00.000Z",
+        "recipientWindowEnd": "2022-12-17T09:30:00.000Z",
+        "senderWindowStart": "2022-12-17T11:02:00.000Z",
+        "senderWindowEnd": "2022-12-17T11:30:00.000Z",
         "assignedTo": 100
     },
     {
         "id": 2,
         "status": "ready",
         "level": "Rush",
+        "sender": 1,
+        "recipient": 2,
+        "recipientWindowStart": "2022-12-17T09:02:00.000Z",
+        "recipientWindowEnd": "2022-12-17T09:30:00.000Z",
+        "senderWindowStart": "2022-12-17T11:02:00.000Z",
+        "senderWindowEnd": "2022-12-17T11:30:00.000Z",
         "assignedTo": 101
     }
 ]

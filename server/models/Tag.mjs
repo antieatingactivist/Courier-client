@@ -21,6 +21,24 @@ Tag.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        recipient: {
+            type: DataTypes.INTEGER,
+        },
+        sender: {
+            type: DataTypes.INTEGER,
+        },
+        senderWindowStart: {
+            type: DataTypes.DATE
+        },
+        senderWindowEnd: {
+            type: DataTypes.DATE
+        },
+        recipientWindowStart: {
+            type: DataTypes.DATE
+        },
+        recipientWindowEnd: {
+            type: DataTypes.DATE
+        },
         assignedTo: {
             type: DataTypes.INTEGER,
             allowNull: true,

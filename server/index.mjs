@@ -31,17 +31,44 @@ app.use(cors());
 
 // Routes
 app.get("/", function(req, res, next) {
-  Driver.findByPk(100, {
-    include: [
-      {
-        model: Tag,
-      }
-    ]
+  // Driver.findByPk(100, {
+  //   include: [
+  //     {
+  //       model: Tag,
+  //     }
+  //   ]
 
-  }).then((data) => {
-    res.json(data)
-  })
-  
+  // }).then((data) => {
+  //   res.json(data)
+  // })
+  Tag.findByPk(1, {})
+    .then((data) => {
+      let tag = data.dataValues;
+      Client.findByPk(tag.sender, {})
+        .then((data) => {
+          let sender = data.dataValues;
+          Client.findByPk(tag.recipient, {})
+            .then((data) => {
+              let recipient = data.dataValues;
+              let responseObject = {
+                ...tag,
+                sender: {
+                  ...sender, 
+                  arrivalWindowStart: tag.senderWindowStart,
+                  arrivalWindowEnd: tag.senderWindowEnd
+                }, 
+                recipient: {
+                  ...recipient,
+                  arrivalWindowStart: tag.recipientWindowStart,
+                  arrivalWindowEnd: tag.recipientWindowEnd
+                }
+              }
+              res.json(responseObject);
+            })
+        })
+      })
+      
+      
 });
 
 
