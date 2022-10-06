@@ -30,43 +30,21 @@ app.use(cors());
 
 
 // Routes
-app.get("/", function(req, res, next) {
-  // Driver.findByPk(100, {
-  //   include: [
-  //     {
-  //       model: Tag,
-  //     }
-  //   ]
+app.get("/api/tags/:driver", async function(req, res, next) {
 
-  // }).then((data) => {
-  //   res.json(data)
-  // })
-  Tag.findByPk(1, {})
-    .then((data) => {
-      let tag = data.dataValues;
-      Client.findByPk(tag.sender, {})
-        .then((data) => {
-          let sender = data.dataValues;
-          Client.findByPk(tag.recipient, {})
-            .then((data) => {
-              let recipient = data.dataValues;
-              let responseObject = {
-                ...tag,
-                sender: {
-                  ...sender, 
-                  arrivalWindowStart: tag.senderWindowStart,
-                  arrivalWindowEnd: tag.senderWindowEnd
-                }, 
-                recipient: {
-                  ...recipient,
-                  arrivalWindowStart: tag.recipientWindowStart,
-                  arrivalWindowEnd: tag.recipientWindowEnd
-                }
-              }
-              res.json(responseObject);
-            })
-        })
-      })
+  const data = await Tag.findAll({
+    where: {assignedTo: req.params.driver},
+    include: [{
+      model: Client,
+      as: "sender"
+    },{
+      model: Client,
+      as: "recipient"
+    }]
+
+  })
+  res.json(data);
+    
       
       
 });

@@ -5,12 +5,23 @@ import Client from './Client.mjs';
 Driver.hasMany(Tag, {
     foreignKey: 'assignedTo'
 });
-Tag.hasOne(Client, {
+
+Client.belongsTo(Tag, {
+    as: 'sender',
     foreignKey: 'id'
 });
 
+Tag.hasOne(Client, {
+    as: 'sender',
+    sourceKey: 'senderId', 
+    foreignKey: 'id'
+});
 
-
+Tag.hasOne(Client, {
+    as: 'recipient',
+    sourceKey: 'recipientId', 
+    foreignKey: 'id'
+});
 
 
 

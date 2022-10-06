@@ -11,7 +11,7 @@ Client.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
-            autoIncrement: false
+            autoIncrement: false,
         },
         name: {
             type: DataTypes.STRING,

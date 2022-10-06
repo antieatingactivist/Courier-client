@@ -21,10 +21,10 @@ Tag.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        recipient: {
+        recipientId: {
             type: DataTypes.INTEGER,
         },
-        sender: {
+        senderId: {
             type: DataTypes.INTEGER,
         },
         senderWindowStart: {
