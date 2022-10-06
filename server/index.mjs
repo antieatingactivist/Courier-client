@@ -1,10 +1,14 @@
 import express from 'express';
+import session from 'express-session';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
 import data from './db.json' assert { type: 'json' };
 import fs from 'fs';
 import cors from 'cors';
+import sequelize from './config/connection.mjs';
+import { Driver } from './models/index.mjs'
+
 
 
 
@@ -28,9 +32,13 @@ app.use(cors());
 
 // Routes
 app.get("/", function(req, res, next) {
+  Driver.findAll({
 
-  res.json(data.data)
+  }).then((data) => {
+    res.json(data)
+  })
 });
+
 
 app.get("/drivers", function(req, res, next) {
 
@@ -101,59 +109,3 @@ app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}!`);
 });
 
-
-
-// const data = [
-//   { 
-//     sender: {
-//       name: "Dumper",
-//       address: "666 Post st.",
-//       city: "San Francisco",
-//       state: "CA",
-//       zip: 94109,
-//       arrivalWindowStart: new Date("2022-12-17T09:00:00"),
-//       arrivalWindowEnd: new Date("2022-12-17T09:30:00"),
-//       isRecipient: false,
-//       status: "scheduled"
-//     },
-//     recipient: {
-//       name: "Clumper",
-//       address: "999 Pine st.",
-//       city: "San Francisco",
-//       state: "CA",
-//       zip: 94109,
-//       arrivalWindowStart: new Date("2022-12-17T11:00:00"),
-//       arrivalWindowEnd: new Date("2022-12-17T11:30:00"),
-//       isRecipient: true,
-//       status: "scheduled"
-//     },
-
-//     level: "Rush"
-//   },
-//   { 
-//     sender: {
-//       name: "Bumper",
-//       address: "333 Sutter st.",
-//       city: "San Francisco",
-//       state: "CA",
-//       zip: 94109,
-//       arrivalWindowStart: new Date("2022-12-17T10:00:00"),
-//       arrivalWindowEnd: new Date("2022-12-17T10:30:00"),
-//       isRecipient: true,
-//       status: "scheduled"
-//     },
-//     recipient: {
-//       name: "Zumper",
-//       address: "111 California st.",
-//       city: "San Francisco",
-//       state: "CA",
-//       zip: 94109,
-//       arrivalWindowStart: new Date("2022-12-17T12:00:00"),
-//       arrivalWindowEnd: new Date("2022-12-17T12:30:00"),
-//       isRecipient: false,
-//       status: "scheduled"
-//     },
-
-//     level: "Regular"
-//   }
-// ]
