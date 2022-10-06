@@ -20,7 +20,11 @@ export class DriverComponent implements OnInit {
   ngOnInit() {
     this.dataService.getDrivers().subscribe({
       next: (data:number[]) => this.drivers = <number[]>data,
-      error: (err :string) => console.error(err),
+      error: (err :string) => {
+        console.error(err),
+        console.warn("Cannot connect to server, using Demo Driver Account");
+        this.drivers = [-1];
+      }
     });
   }
   save(formData: NgForm): void {

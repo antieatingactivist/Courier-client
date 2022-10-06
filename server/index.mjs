@@ -6,6 +6,12 @@ import data from './db.json' assert { type: 'json' };
 import fs from 'fs';
 import cors from 'cors';
 
+data = {
+  drivers: [],
+  count: 0,
+  data: []
+};
+
 let count = data.count;
 let drivers = data.drivers;
 
