@@ -1,5 +1,5 @@
 {
-  "drivers" : [
+  "drivers": [
     100,
     101,
     102
@@ -13,8 +13,8 @@
         "city": "San Francisco",
         "state": "CA",
         "zip": 94109,
-        "arrivalWindowStart": "2022-12-17T09:00:00",
-        "arrivalWindowEnd": "2022-12-17T09:30:00",
+        "arrivalWindowStart": "2022-12-17T09:02:00.000Z",
+        "arrivalWindowEnd": "2022-12-17T09:30:00.000Z",
         "isRecipient": false
       },
       "recipient": {
@@ -23,8 +23,8 @@
         "city": "San Francisco",
         "state": "CA",
         "zip": 94109,
-        "arrivalWindowStart": "2022-12-17T11:00:00",
-        "arrivalWindowEnd": "2022-12-17T11:30:00",
+        "arrivalWindowStart": "2022-12-17T11:02:00.000Z",
+        "arrivalWindowEnd": "2022-12-17T11:30:00.000Z",
         "isRecipient": true
       },
       "status": "ready",
@@ -39,8 +39,8 @@
         "city": "San Francisco",
         "state": "CA",
         "zip": 94104,
-        "arrivalWindowStart": "2022-12-05T08:02:00.000Z",
-        "arrivalWindowEnd": "2022-12-05T08:30:00.000Z",
+        "arrivalWindowStart": "2022-12-17T08:02:00.000Z",
+        "arrivalWindowEnd": "2022-12-17T08:30:00.000Z",
         "isRecipient": false
       },
       "recipient": {
@@ -49,8 +49,8 @@
         "city": "San Francisco",
         "state": "CA",
         "zip": 94103,
-        "arrivalWindowStart": "2022-09-02T19:03:00.000Z",
-        "arrivalWindowEnd": "2022-11-25T01:05:00.000Z",
+        "arrivalWindowStart": "2022-12-17T19:03:00.000Z",
+        "arrivalWindowEnd": "2022-12-17T01:05:00.000Z",
         "isRecipient": true
       },
       "level": "Rush",
@@ -65,8 +65,8 @@
         "city": "San Francisco",
         "state": "CA",
         "zip": 94104,
-        "arrivalWindowStart": "2022-10-04T05:02:00.000Z",
-        "arrivalWindowEnd": "2022-10-04T05:10:00.000Z",
+        "arrivalWindowStart": "2022-12-17T05:02:00.000Z",
+        "arrivalWindowEnd": "2022-12-17T05:10:00.000Z",
         "isRecipient": false
       },
       "recipient": {
@@ -75,13 +75,13 @@
         "city": "San Francisco",
         "state": "CA",
         "zip": 94103,
-        "arrivalWindowStart": "2022-10-04T06:03:00.000Z",
-        "arrivalWindowEnd": "2022-10-04T06:30:00.000Z",
+        "arrivalWindowStart": "2022-12-17T06:03:00.000Z",
+        "arrivalWindowEnd": "2022-12-17T06:30:00.000Z",
         "isRecipient": true
       },
       "level": "Rush",
       "id": 100019,
-      "status": "ready",
+      "status": "picked-up",
       "assignedTo": 100
     },
     {
@@ -91,8 +91,8 @@
         "city": "San Francisco",
         "state": "CA",
         "zip": 94104,
-        "arrivalWindowStart": "2022-10-04T05:28:00.000Z",
-        "arrivalWindowEnd": "2022-10-04T05:37:00.000Z",
+        "arrivalWindowStart": "2022-12-17T05:28:00.000Z",
+        "arrivalWindowEnd": "2022-12-17T05:37:00.000Z",
         "isRecipient": false
       },
       "recipient": {
@@ -101,8 +101,8 @@
         "city": "San Francisco",
         "state": "CA",
         "zip": 94103,
-        "arrivalWindowStart": "2022-09-02T19:03:00.000Z",
-        "arrivalWindowEnd": "2022-11-25T01:05:00.000Z",
+        "arrivalWindowStart": "2022-12-17T19:03:00.000Z",
+        "arrivalWindowEnd": "2022-12-17T01:05:00.000Z",
         "isRecipient": true
       },
       "level": "Rush",

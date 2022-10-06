@@ -7,6 +7,7 @@ import fs from 'fs';
 import cors from 'cors';
 
 let count = data.count;
+let drivers = data.drivers;
 
 
 dotenv.config();

@@ -63,6 +63,10 @@ export class DataService {
 
       tags = this.sortByStatus(tags);
 
+      for ( let tag of tags ) {
+        console.log(new Date(tag.sender.arrivalWindowEnd));
+      }
+
 
 
 
