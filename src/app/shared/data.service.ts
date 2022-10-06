@@ -60,7 +60,7 @@ export class DataService {
       }
 
       tags = this.sortByTimeDue(tags);
-      
+
       tags = this.sortByStatus(tags);
 
 
@@ -99,10 +99,24 @@ export class DataService {
     }
 
     private sortByTimeDue(tags: ITag[]) {
-
+      
       return tags.sort((a, b) => compare(a, b));
       function compare(a: ITag, b: ITag) {
-        if (new Date(a.sender.arrivalWindowEnd).getTime() < new Date(b.sender.arrivalWindowEnd).getTime()) {
+        let aTime, bTime;
+        if (a.status === "picked-up") {
+          aTime = a.recipient.arrivalWindowEnd;
+        } else {
+          aTime = a.sender.arrivalWindowEnd;
+        }
+
+        if (b.status === "picked-up") {
+          bTime = b.recipient.arrivalWindowEnd;
+        } else {
+          bTime = b.sender.arrivalWindowEnd;
+        }
+
+
+        if (new Date(aTime).getTime() < new Date(bTime).getTime()) {
           return 1
         } else {
           return -1
