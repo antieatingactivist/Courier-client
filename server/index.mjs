@@ -45,8 +45,10 @@ app.get("/api/tags/:driver", async function(req, res, next) {
 
     tag.sender.setDataValue('arrivalWindowStart', tag.get({plain: true}).senderWindowStart);
     tag.sender.setDataValue('arrivalWindowEnd', tag.get({plain: true}).senderWindowEnd);
+    tag.sender.setDataValue('isRecipient', false)
     tag.recipient.setDataValue('arrivalWindowStart', tag.get({plain: true}).recipientWindowStart);
     tag.recipient.setDataValue('arrivalWindowEnd', tag.get({plain: true}).recipientWindowEnd);
+    tag.recipient.setDataValue('isRecipient', true)
     
   }
   res.json(data);    
