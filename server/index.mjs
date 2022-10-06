@@ -6,8 +6,7 @@ import dotenv from 'dotenv';
 import data from './db.json' assert { type: 'json' };
 import fs from 'fs';
 import cors from 'cors';
-import sequelize from './config/connection.mjs';
-import { Driver } from './models/index.mjs'
+import { Driver, Tag, Client } from './models/index.mjs'
 
 
 
@@ -32,11 +31,17 @@ app.use(cors());
 
 // Routes
 app.get("/", function(req, res, next) {
-  Driver.findAll({
+  Driver.findByPk(100, {
+    include: [
+      {
+        model: Tag,
+      }
+    ]
 
   }).then((data) => {
     res.json(data)
   })
+  
 });
 
 
