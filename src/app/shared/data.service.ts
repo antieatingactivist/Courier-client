@@ -65,7 +65,7 @@ export class DataService {
       })
     }
     assignToDriver(driver: number, tagId: number) {
-      return this.http.put(`http://10.0.0.126:3000/${tagId}`, driver, {
+      return this.http.put(`http://10.0.0.126:3000/api/tags/${tagId}`, driver, {
         headers: new HttpHeaders({
           'Content-Type': 'application/json',
           "Access-Control-Allow-Origin" : '*'

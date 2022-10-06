@@ -3,7 +3,8 @@ import Tag from './Tag.mjs';
 import Client from './Client.mjs';
 
 Driver.hasMany(Tag, {
-    foreignKey: 'assignedTo'
+    foreignKey: 'assignedTo',
+    constraints: false,
 });
 
 Client.belongsTo(Tag, {
