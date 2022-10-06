@@ -7,8 +7,8 @@ Driver.hasMany(Tag, {
 });
 
 Client.belongsTo(Tag, {
-    as: 'sender',
-    foreignKey: 'id'
+    foreignKey: 'id',
+    as: 'window'
 });
 
 Tag.hasOne(Client, {
