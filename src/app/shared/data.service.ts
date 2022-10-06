@@ -2,10 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from 'rxjs';
 import { ITag, IStop, IOptions } from './stop-data.model'
+import demoTags from './demoTags';
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
+    demoMode = false;
     allTags: ITag[] = [];
     organizedStops: IStop[] = [];
     date: Date = new Date();
@@ -13,9 +15,9 @@ export class DataService {
       hideComplete: false
     }
 
-    constructor(private http: HttpClient) { 
-      
+    constructor(private http: HttpClient) {       
     }
+
     getDate(): Date {
       this.date = new Date();
       return this.date;
@@ -24,7 +26,14 @@ export class DataService {
     getDrivers(): Observable<number[]> {
       return this.http.get<number[]>('http://10.0.0.126:3000/drivers')    
     }
-    getAllTags(): Observable<ITag[]> {
+    getAllTags(driverNumber?: number): Observable<ITag[]> {
+      if (driverNumber === -1) {
+        this.demoMode = true;
+        return new Observable((subscriber) => {
+          subscriber.next(demoTags);
+          subscriber.complete();
+        })
+      }
       return this.http.get<ITag[]>('http://10.0.0.126:3000')    
     }
     postTag(newTag: ITag) {
@@ -36,6 +45,17 @@ export class DataService {
       })
     }    
     changeStatus(status: string, tagId: number) {
+      if (this.demoMode) {
+        for (let tag of this.allTags) {
+          if (tag.id === tagId) {
+            tag.status = status;
+          }
+        }
+        return new Observable((subscriber) => {
+          subscriber.next();
+          subscriber.complete();
+        })
+      }
       return this.http.put(`http://10.0.0.126:3000/${tagId}`, {status: status}, {
         headers: new HttpHeaders({
           'Content-Type': 'application/json',
@@ -54,6 +74,7 @@ export class DataService {
 
     getOrganizedData(driverNumber?: number ) {
       let tags: ITag[] = this.allTags;
+      console.log(this.allTags)
       // this.organizedStops = [];
       if (driverNumber) {
         tags = this.filterByDriver(tags, driverNumber);

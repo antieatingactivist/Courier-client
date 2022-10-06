@@ -37,8 +37,11 @@ export class StopListComponent implements OnInit {
 
   private getAllTagsAndOrganize(driverNumber: number) {
 
-    this.dataService.getAllTags().subscribe({
-      next: (data:ITag[]) => this.dataService.allTags = <ITag[]>data,
+    this.dataService.getAllTags(driverNumber).subscribe({
+      next: (data:ITag[]) => {
+        this.dataService.allTags = <ITag[]>data;
+        console.log(data)
+      },
       error: (err :string) => console.error(err),
       complete: () => {
         this.data = this.dataService.getOrganizedData(driverNumber);
