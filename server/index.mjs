@@ -54,6 +54,32 @@ app.get("/api/tags/:driver", async function(req, res, next) {
   res.json(data);    
 });
 
+app.get("/api/tags/", async function(req, res, next) {
+
+  const data = await Tag.findAll({
+    // where: {assignedTo: req.params.driver},
+    include: [{
+      model: Client,
+      as: "sender",
+    },{
+      model: Client,
+      as: "recipient",
+    }]
+
+  })
+  for (let tag of data) {
+
+    tag.sender.setDataValue('arrivalWindowStart', tag.get({plain: true}).senderWindowStart);
+    tag.sender.setDataValue('arrivalWindowEnd', tag.get({plain: true}).senderWindowEnd);
+    tag.sender.setDataValue('isRecipient', false)
+    tag.recipient.setDataValue('arrivalWindowStart', tag.get({plain: true}).recipientWindowStart);
+    tag.recipient.setDataValue('arrivalWindowEnd', tag.get({plain: true}).recipientWindowEnd);
+    tag.recipient.setDataValue('isRecipient', true)
+    
+  }
+  res.json(data);    
+});
+
 
 app.get("/api/drivers", async function(req, res, next) {
   const data = await Driver.findAll({
@@ -63,7 +89,7 @@ app.get("/api/drivers", async function(req, res, next) {
   // res.json(data.drivers)
 });
 
-app.put("/:id", function(req, res, next) {
+app.put("/api/tags/:id", function(req, res, next) {
   console.log(req.body);
   for (let tag of data.data) {
     if (tag.id === +req.params.id) {
