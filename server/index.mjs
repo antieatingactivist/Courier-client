@@ -4,14 +4,8 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
 import data from './db.json' assert { type: 'json' };
-import fs from 'fs';
 import cors from 'cors';
 import { Driver, Tag, Client } from './models/index.mjs';
-import { v4 as uuidv4 } from 'uuid';
-
-
-let count = data.count;
-let drivers = data.drivers;
 
 
 dotenv.config();
@@ -143,7 +137,7 @@ app.post("/api/tags", async function(req, res, next) {
   
   const createTag = await Tag.create(tag);
 
-  res.json(data);
+  res.json(createTag);
 
 });
 
