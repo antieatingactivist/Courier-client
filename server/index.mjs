@@ -89,24 +89,22 @@ app.get("/api/drivers", async function(req, res, next) {
   // res.json(data.drivers)
 });
 
-app.put("/api/tags/:id", function(req, res, next) {
-  console.log(req.body);
-  for (let tag of data.data) {
-    if (tag.id === +req.params.id) {
-      if (req.body.driver) {
-        if (req.body.driver === "") tag.assignedTo = null;
-        else tag.assignedTo = +req.body.driver;
-      }
-      if (req.body.status) {
-        tag.status = req.body.status;
-      }
-      
-    }
+app.put("/api/tags/:id", async function(req, res, next) {
+  console.log("hey");
+  if (req.body.driver) {
+    const tag = await Tag.update(
+      { assignedTo: req.body.driver },
+      { where: {id: req.params.id}}
+    )
+    res.json(tag);
   }
-
-  res.json(data.data);
-
-  fs.writeFile("./db.json", JSON.stringify({drivers: drivers, count: count, data: data.data}, null, 2), (err) => err ? console.error(err) : console.log("success"));
+  if (req.body.status) {
+    const tag = await Tag.update(
+      { status: req.body.status },
+      { where: {id: req.params.id}}
+    )
+    res.json(tag);
+  }  
 })
 
 app.post("/api/tags", async function(req, res, next) {
