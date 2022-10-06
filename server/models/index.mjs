@@ -8,19 +8,21 @@ Driver.hasMany(Tag, {
 
 Client.belongsTo(Tag, {
     foreignKey: 'id',
-    as: 'window'
+    constraints: false,
 });
 
 Tag.hasOne(Client, {
     as: 'sender',
     sourceKey: 'senderId', 
-    foreignKey: 'id'
+    foreignKey: 'id',
+    constraints: false,
 });
 
 Tag.hasOne(Client, {
     as: 'recipient',
     sourceKey: 'recipientId', 
-    foreignKey: 'id'
+    foreignKey: 'id',
+    constraints: false,
 });
 
 

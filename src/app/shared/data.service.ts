@@ -37,7 +37,7 @@ export class DataService {
       return this.http.get<ITag[]>(`http://10.0.0.126:3000/api/tags/${driverNumber}`)    
     }
     postTag(newTag: ITag) {
-      return this.http.post<ITag>('http://10.0.0.126:3000', newTag, {
+      return this.http.post<ITag>('http://10.0.0.126:3000/api/tags/', newTag, {
         headers: new HttpHeaders({
           'Content-Type': 'application/json',
           "Access-Control-Allow-Origin" : '*'

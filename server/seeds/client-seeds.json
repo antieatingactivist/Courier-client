@@ -1,6 +1,6 @@
 [
     {
-        "id": 1,
+ 
         "name": "Krumper",
         "address": "44 Montgomery st.",
         "city": "San Francisco",
@@ -8,7 +8,7 @@
         "zip": 94104
     },
     {
-        "id": 2,
+    
         "name": "Brumper",
         "address": "44 Montgomery st.",
         "city": "San Francisco",

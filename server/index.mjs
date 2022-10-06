@@ -6,7 +6,8 @@ import dotenv from 'dotenv';
 import data from './db.json' assert { type: 'json' };
 import fs from 'fs';
 import cors from 'cors';
-import { Driver, Tag, Client } from './models/index.mjs'
+import { Driver, Tag, Client } from './models/index.mjs';
+import { v4 as uuidv4 } from 'uuid';
 
 
 let count = data.count;
@@ -44,6 +45,8 @@ app.get("/api/tags/:driver", async function(req, res, next) {
 
     tag.sender.setDataValue('arrivalWindowStart', tag.get({plain: true}).senderWindowStart);
     tag.sender.setDataValue('arrivalWindowEnd', tag.get({plain: true}).senderWindowEnd);
+    tag.recipient.setDataValue('arrivalWindowStart', tag.get({plain: true}).recipientWindowStart);
+    tag.recipient.setDataValue('arrivalWindowEnd', tag.get({plain: true}).recipientWindowEnd);
     
   }
   res.json(data);    
@@ -78,42 +81,43 @@ app.put("/:id", function(req, res, next) {
   fs.writeFile("./db.json", JSON.stringify({drivers: drivers, count: count, data: data.data}, null, 2), (err) => err ? console.error(err) : console.log("success"));
 })
 
-app.post("/", function(req, res, next) {
+app.post("/api/tags", async function(req, res, next) {
 
-  res.json(`${req.method} request received`);
-  // console.log(req.body);
+  const sender = {
 
-  data.data.push({
-    
-      sender: {
-        name: req.body.senderName,
-        address: req.body.senderAddress,
-        city: req.body.senderCity,
-        state: req.body.senderState,
-        zip: req.body.senderZip,
-        arrivalWindowStart: new Date(req.body.senderWindowStart),
-        arrivalWindowEnd: new Date(req.body.senderWindowEnd),
-        isRecipient: false
-      },
-      recipient: {
-        name: req.body.recipientName,
-        address: req.body.recipientAddress,
-        city: req.body.recipientCity,
-        state: req.body.recipientState,
-        zip: req.body.recipientZip,
-        arrivalWindowStart: new Date(req.body.recipientWindowStart),
-        arrivalWindowEnd: new Date(req.body.recipientWindowEnd),
-        isRecipient: true
-      },
+    "name": "Krumper",
+    "address": "44 Montgomery st.",
+    "city": "San Francisco",
+    "state": "CA",
+    "zip": 94104
+  }
+  const recipient = {
+
+    "name": "Krumper",
+    "address": "44 Montgomery st.",
+    "city": "San Francisco",
+    "state": "CA",
+    "zip": 94104
+  }
+
+  const createSender = await Client.create(sender);
+
+  const createRecipient = await Client.create(recipient);
+
+  const tag = { 
+    ...req.body, 
+    status: "ready",
+    recipientId: createRecipient.get({plain: true}).id,
+    senderId: createSender.get({plain: true}).id,
+    senderWindowStart: req.body.senderWindowStart,
+    senderWindowEnd: req.body.senderWindowEnd,
+    recipientWindowStart: req.body.recipientWindowStart,
+    recipientWindowEnd: req.body.recipientWindowEnd,
+  }
   
-      level: req.body.level,
-      id: count,
-      status: "scheduled",
-      assignedTo: null
-    
-  });
+  const createTag = await Tag.create(tag);
 
-  fs.writeFile("./db.json", JSON.stringify({drivers: drivers, count: ++count, data: data.data}, null, 2), (err) => err ? console.error(err) : console.log("success"));
+  res.json(data);
 
 });
 
