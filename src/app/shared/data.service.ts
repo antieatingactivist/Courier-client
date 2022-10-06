@@ -24,7 +24,7 @@ export class DataService {
     }
 
     getDrivers(): Observable<number[]> {
-      return this.http.get<number[]>('http://10.0.0.126:3000/drivers')    
+      return this.http.get<number[]>('http://10.0.0.126:3000/api/drivers/')    
     }
     getAllTags(driverNumber?: number): Observable<ITag[]> {
       if (driverNumber === -1) {
@@ -34,7 +34,7 @@ export class DataService {
           subscriber.complete();
         })
       }
-      return this.http.get<ITag[]>('http://10.0.0.126:3000')    
+      return this.http.get<ITag[]>(`http://10.0.0.126:3000/api/tags/${driverNumber}`)    
     }
     postTag(newTag: ITag) {
       return this.http.post<ITag>('http://10.0.0.126:3000', newTag, {

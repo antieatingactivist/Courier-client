@@ -9,8 +9,6 @@ import cors from 'cors';
 import { Driver, Tag, Client } from './models/index.mjs'
 
 
-
-
 let count = data.count;
 let drivers = data.drivers;
 
@@ -27,7 +25,6 @@ const PORT = 3000;
 app.use(express.json());
 
 app.use(cors());
-
 
 // Routes
 app.get("/api/tags/:driver", async function(req, res, next) {
@@ -49,17 +46,16 @@ app.get("/api/tags/:driver", async function(req, res, next) {
     tag.sender.setDataValue('arrivalWindowEnd', tag.get({plain: true}).senderWindowEnd);
     
   }
-  
-  res.json(data);
-    
-      
-      
+  res.json(data);    
 });
 
 
-app.get("/drivers", function(req, res, next) {
-
-  res.json(data.drivers)
+app.get("/api/drivers", async function(req, res, next) {
+  const data = await Driver.findAll({
+    
+  });
+  res.json(data);
+  // res.json(data.drivers)
 });
 
 app.put("/:id", function(req, res, next) {

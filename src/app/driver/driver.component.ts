@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class DriverComponent implements OnInit {
   title = 'Courier-client';
   date = this.dataService.getDate();
-  drivers: number[] = [];
+  drivers: any[] = [];
   driver = new Driver();
 
 
@@ -19,11 +19,11 @@ export class DriverComponent implements OnInit {
 
   ngOnInit() {
     this.dataService.getDrivers().subscribe({
-      next: (data:number[]) => this.drivers = <number[]>data,
+      next: (data:any[]) => this.drivers = <any[]>data,
       error: (err :string) => {
         console.error(err),
         console.warn("Cannot connect to server, using Demo Driver Account");
-        this.drivers = [-1];
+        this.drivers = [{id: -1}];
       }
     });
   }
