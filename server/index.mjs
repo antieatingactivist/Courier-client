@@ -35,30 +35,20 @@ app.get("/api/tags/:driver", async function(req, res, next) {
   const data = await Tag.findAll({
     where: {assignedTo: req.params.driver},
     include: [{
-
-      
       model: Client,
       as: "sender",
-      include: [{
-        
-        attributes: ['senderWindowStart','senderWindowEnd'],
-        model: Tag,
-        as: 'window'
-        
-      }]
     },{
       model: Client,
       as: "recipient",
-      include: [{
-        
-        attributes: ['recipientWindowStart','recipientWindowEnd'],
-        model: Tag,
-        as: 'window'
-        
-      }]
     }]
 
   })
+  for (let tag of data) {
+
+    tag.sender.setDataValue('arrivalWindowStart', tag.get({plain: true}).senderWindowStart);
+    tag.sender.setDataValue('arrivalWindowEnd', tag.get({plain: true}).senderWindowEnd);
+    
+  }
   
   res.json(data);
     
