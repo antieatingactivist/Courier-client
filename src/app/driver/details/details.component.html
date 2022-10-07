@@ -4,8 +4,8 @@
         <div class="card-header dark {{status}}">
             {{data.clientInfo.name}}
         </div>            
-        <div class="card-body remove-padding dark">   
-            <a href="http://maps.{{platform}}.com/?q={{addressString}}" >            
+        <div class="card-body dark">   
+            <a href="http://maps.{{platform}}.com/?q={{addressString}}" class="no-decoration">            
                 <p>{{data.clientInfo.address}}<br>{{data.clientInfo.city}}, {{data.clientInfo.state}} {{data.clientInfo.zip}}</p>
             </a>
             <p>{{data.clientInfo.arrivalWindowStart | date: 'shortTime'}} - {{data.clientInfo.arrivalWindowEnd | date: 'shortTime'}}</p>

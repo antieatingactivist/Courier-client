@@ -70,3 +70,7 @@
 .picked-up {
     background-color: #656565
 }
+.no-decoration {
+    text-decoration: none;
+    color: #aaaabb;
+}
