@@ -28,6 +28,7 @@ export class DataService {
       return this.http.get<number[]>('http://10.0.0.126:3000/api/drivers/')    
     }
     getAllTags(driverNumber?: number): Observable<ITag[]> {
+      console.log(driverNumber);
       if (driverNumber === -1) {
         this.demoMode = true;
         return new Observable((subscriber) => {

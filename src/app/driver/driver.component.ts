@@ -26,6 +26,7 @@ export class DriverComponent implements OnInit {
         console.error(err),
         console.warn("Cannot connect to server, using Demo Driver Account");
         this.drivers = [{id: -1}];
+        this.driver.number = "-1";
       },
       complete: () => {
         console.log(this.drivers)
