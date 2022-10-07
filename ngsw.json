@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1665116581384,
+  "timestamp": 1665117776903,
   "index": "/Courier-client/index.html",
   "assetGroups": [
     {
@@ -14,7 +14,7 @@
         "/Courier-client/794.32083c6df0fce13c.js",
         "/Courier-client/favicon.ico",
         "/Courier-client/index.html",
-        "/Courier-client/main.66bad5a2926f9b02.js",
+        "/Courier-client/main.5462af753815916e.js",
         "/Courier-client/manifest.webmanifest",
         "/Courier-client/polyfills.9d1d24a7f053e429.js",
         "/Courier-client/runtime.d47125cb19335cff.js",
@@ -54,8 +54,8 @@
     "/Courier-client/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "/Courier-client/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "/Courier-client/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/Courier-client/index.html": "458a1063ee1dd4eb2bdbf21a5e136c3971fd533f",
-    "/Courier-client/main.66bad5a2926f9b02.js": "5bead32921a68c9b24361cb8ed418351787947ae",
+    "/Courier-client/index.html": "e91f17fb76e2d92af42066317d1869d3f52b0a65",
+    "/Courier-client/main.5462af753815916e.js": "4e814af5f56c28387f91ff04637ed8a4305e26fa",
     "/Courier-client/manifest.webmanifest": "663893f55b13860dda642c227d6260dbdbacd9f4",
     "/Courier-client/polyfills.9d1d24a7f053e429.js": "b3ab8aaeae47a555c290bd3e25af606e6030e891",
     "/Courier-client/runtime.d47125cb19335cff.js": "8c9d975921a028a561c1d9a9085a8cfc6ee941ff",
