@@ -5,7 +5,7 @@
 
 
 .full-height {
-    height: calc(100vh - 20px);
+    min-height: calc(100vh - 84px);
 }
 
 .remove-padding{

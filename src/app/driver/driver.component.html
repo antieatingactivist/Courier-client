@@ -1,18 +1,23 @@
 
+<div class="container">
 
+  <div class="row">
+    <div class="col col-lg-2">
 
-<div class="card dark" style="width: 18rem;">
+    </div>
+    <div class="col">
+    <div class="card dark text-center" style="width: 18rem;">
     
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <h5 class="card-title">Driver Login</h5>
+      <p class="card-text">Select Your Driver Number</p>
       <form novalidate
       (ngSubmit)="save(signupForm)"
       #signupForm="ngForm">
       <select class="form-select" aria-label="Default select example" [(ngModel)]=driver.number name="driverNumber">
-        <option value="">Select Driver Number</option>
         <option *ngFor="let driver of drivers" value="{{driver.id}}">{{driver.id}}</option>
       </select>
+      <br>
       <button class="btn btn-primary mr-3"
       type="submit"
       style="width:80px"
@@ -20,7 +25,14 @@
       [disabled]="!signupForm.valid">Save</button>
       </form>
 
+
     </div>
   </div>
+</div>
+<div class="col col-lg-2">
+
+</div>
+</div>
+</div>
 <!-- <router-outlet></router-outlet> -->
 
