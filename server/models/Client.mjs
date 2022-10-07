@@ -2,7 +2,6 @@ import { Model, DataTypes } from 'sequelize';
 import sequelize from '../config/connection.mjs'
 
 class Client extends Model {
-
 }
 
 Client.init(
@@ -33,16 +32,6 @@ Client.init(
             type: DataTypes.INTEGER,
             allowNull: false,
         },
-
-        // assignedTo: {
-        //     type: DataTypes.INTEGER,
-        //     allowNull: true,
-        //     references: {
-        //         model: "driver",
-        //         key: "id",
-        //     }
-        // }
-
     },
     {
         sequelize,

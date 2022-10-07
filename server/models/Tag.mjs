@@ -2,7 +2,6 @@ import { Model, DataTypes } from 'sequelize';
 import sequelize from '../config/connection.mjs'
 
 class Tag extends Model {
-
 }
 
 Tag.init(

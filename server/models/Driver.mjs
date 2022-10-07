@@ -2,7 +2,6 @@ import { Model, DataTypes } from 'sequelize';
 import sequelize from '../config/connection.mjs'
 
 class Driver extends Model {
-
 }
 
 Driver.init(
