@@ -74,7 +74,6 @@ app.get("/api/drivers", async function(req, res, next) {
     
   });
   res.json(data);
-  // res.json(data.drivers)
 });
 
 app.put("/api/tags/:id", async function(req, res, next) {
