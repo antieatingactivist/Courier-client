@@ -15,7 +15,8 @@ export class DataService {
       hideComplete: false
     }
 
-    constructor(private http: HttpClient) {       
+    constructor(private http: HttpClient) {
+      this.initDemoTags();
     }
 
     getDate(): Date {
@@ -170,4 +171,18 @@ export class DataService {
       }
       return stops;
     }
+
+    private initDemoTags() {
+      for (let i in demoTags) {
+        let now = new Date();
+        now = new Date(now.setMinutes(now.getMinutes()-5*(<any>i-1)))
+        // const offset = <any>i*5;
+        // console.log(+i)
+        demoTags[i].sender.arrivalWindowStart = new Date(now.setMinutes(now.getMinutes()+5));
+        demoTags[i].sender.arrivalWindowEnd = new Date(now.setMinutes(now.getMinutes()+30));
+        demoTags[i].recipient.arrivalWindowStart = new Date(now.setMinutes(now.getMinutes()));
+        demoTags[i].recipient.arrivalWindowEnd = new Date(now.setMinutes(now.getMinutes()+30));
+      }
+    }
 }
+

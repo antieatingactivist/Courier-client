@@ -1,24 +1,18 @@
 import express from 'express';
-import session from 'express-session';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
-import data from './db.json' assert { type: 'json' };
 import cors from 'cors';
 import { Driver, Tag, Client } from './models/index.mjs';
-
 
 dotenv.config();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-// const httpApp = express();
 const PORT = 3000;
 
-
 app.use(express.json());
-
 app.use(cors());
 
 // Routes
@@ -84,7 +78,7 @@ app.get("/api/drivers", async function(req, res, next) {
 });
 
 app.put("/api/tags/:id", async function(req, res, next) {
-  console.log("hey");
+
   if (req.body.driver) {
     const tag = await Tag.update(
       { assignedTo: req.body.driver },
@@ -102,7 +96,7 @@ app.put("/api/tags/:id", async function(req, res, next) {
 })
 
 app.post("/api/tags", async function(req, res, next) {
-  console.log(req.body);
+
   const sender = {
 
     "name": req.body.senderName,
@@ -121,7 +115,6 @@ app.post("/api/tags", async function(req, res, next) {
   }
 
   const createSender = await Client.create(sender);
-
   const createRecipient = await Client.create(recipient);
 
   const tag = { 
