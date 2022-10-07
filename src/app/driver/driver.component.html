@@ -11,6 +11,7 @@
     <div class="card-body">
       <h5 class="card-title">Driver Login</h5>
       <p class="card-text">Select Your Driver Number</p>
+      <p *ngIf="drivers[0].id === -1" class="card-text">Cannot connect to database, select -1 to use demo account</p>
       <form novalidate
       (ngSubmit)="save(signupForm)"
       #signupForm="ngForm">
