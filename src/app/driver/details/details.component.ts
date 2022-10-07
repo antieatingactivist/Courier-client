@@ -74,7 +74,7 @@ export class DetailsComponent implements OnInit {
   closeSignatureScreen() {
     this.showSignatureScreen = false;
     this.submit();
-    this.location.back();
+    
     
   }
 
@@ -88,8 +88,9 @@ export class DetailsComponent implements OnInit {
     }
     
     this.dataService.changeStatus(status, Math.floor(this.data.id)).subscribe({
-      next: (data: any) => {console.log(data)},
-      error: (err: any) => {console.error(err)}
+      next: (data: any) => console.log(data),
+      error: (err: any) => console.error(err),
+      complete: () => this.location.back()
     });
     
   }
