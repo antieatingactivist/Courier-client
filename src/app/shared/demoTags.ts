@@ -2,21 +2,21 @@ import { ITag } from './stop-data.model';
 const data: ITag[] = [
       {
         "sender": {
-          "name": "Dumper",
-          "address": "666 Post st.",
+          "name": "Twitter HQ",
+          "address": "1355 Market St #900",
           "city": "San Francisco",
           "state": "CA",
-          "zip": 94109,
+          "zip": 94103,
           "arrivalWindowStart": new Date(),
           "arrivalWindowEnd": new Date(),
           "isRecipient": false
         },
         "recipient": {
-          "name": "Clumper",
-          "address": "999 Pine st.",
+          "name": "First Republic Bank",
+          "address": "44 Montgomery st.",
           "city": "San Francisco",
           "state": "CA",
-          "zip": 94109,
+          "zip": 94104,
           "arrivalWindowStart": new Date(),
           "arrivalWindowEnd": new Date(),
           "isRecipient": true
@@ -28,21 +28,21 @@ const data: ITag[] = [
       },
       {
         "sender": {
-          "name": "Krumper",
-          "address": "44 Montgomery st.",
+          "name": "Yelp",
+          "address": "140 New Montgomery St 9th floor",
           "city": "San Francisco",
           "state": "CA",
-          "zip": 94104,
+          "zip": 94105,
           "arrivalWindowStart": new Date(),
           "arrivalWindowEnd": new Date(),
           "isRecipient": false
         },
         "recipient": {
-          "name": "Frumper",
-          "address": "888 Brannon st.",
+          "name": "Oracle Park",
+          "address": "24 Willie Mays Plaza",
           "city": "San Francisco",
           "state": "CA",
-          "zip": 94103,
+          "zip": 94107,
           "arrivalWindowStart": new Date(),
           "arrivalWindowEnd": new Date(),
           "isRecipient": true
@@ -54,18 +54,18 @@ const data: ITag[] = [
       },
       {
         "sender": {
-          "name": "Krumper test",
-          "address": "44 Montgomery st.",
+          "name": "Ferry Building",
+          "address": "1 Ferry Building",
           "city": "San Francisco",
           "state": "CA",
-          "zip": 94104,
+          "zip": 94105,
           "arrivalWindowStart": new Date(),
           "arrivalWindowEnd": new Date(),
           "isRecipient": false
         },
         "recipient": {
-          "name": "Frumper",
-          "address": "888 Brannon st.",
+          "name": "San Francisco Museum of Modern Art",
+          "address": "151 3rd St.",
           "city": "San Francisco",
           "state": "CA",
           "zip": 94103,
@@ -80,21 +80,21 @@ const data: ITag[] = [
       },
       {
         "sender": {
-          "name": "Krumper",
-          "address": "44 Montgomery st.",
+          "name": "San Francisco Marriott Fisherman's Wharf",
+          "address": "1250 Columbus Ave",
           "city": "San Francisco",
           "state": "CA",
-          "zip": 94104,
+          "zip": 94133,
           "arrivalWindowStart": new Date(),
           "arrivalWindowEnd": new Date(),
           "isRecipient": false
         },
         "recipient": {
-          "name": "Frumper",
-          "address": "888 Brannon st.",
+          "name": "Golden Gate National Parks Conservancy",
+          "address": "201, Fort Mason",
           "city": "San Francisco",
           "state": "CA",
-          "zip": 94103,
+          "zip": 94123,
           "arrivalWindowStart": new Date(),
           "arrivalWindowEnd": new Date(),
           "isRecipient": true
@@ -106,21 +106,21 @@ const data: ITag[] = [
       },
       {
         "sender": {
-          "name": "Krumper",
-          "address": "44 Montgomery st.",
+          "name": "San Francisco Superior Courthouse",
+          "address": "400 McAllister St",
           "city": "San Francisco",
           "state": "CA",
-          "zip": 94104,
+          "zip": 94102,
           "arrivalWindowStart": new Date(),
           "arrivalWindowEnd": new Date(),
           "isRecipient": false
         },
         "recipient": {
-          "name": "Frumper",
-          "address": "888 Brannon st.",
+          "name": "Asian Art Museum",
+          "address": "200 Larkin St",
           "city": "San Francisco",
           "state": "CA",
-          "zip": 94103,
+          "zip": 94102,
           "arrivalWindowStart": new Date(),
           "arrivalWindowEnd": new Date(),
           "isRecipient": true
