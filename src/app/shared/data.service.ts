@@ -24,7 +24,7 @@ export class DataService {
     }
 
     getDrivers(): Observable<number[]> {
-      return this.http.get<number[]>('http://10.0.0.126:3000/drivers')    
+      return this.http.get<number[]>('http://10.0.0.126:3000/api/drivers/')    
     }
     getAllTags(driverNumber?: number): Observable<ITag[]> {
       if (driverNumber === -1) {
@@ -34,10 +34,11 @@ export class DataService {
           subscriber.complete();
         })
       }
-      return this.http.get<ITag[]>('http://10.0.0.126:3000')    
+      if (!driverNumber) return this.http.get<ITag[]>(`http://10.0.0.126:3000/api/tags/`)
+      else return this.http.get<ITag[]>(`http://10.0.0.126:3000/api/tags/${driverNumber}`)    
     }
     postTag(newTag: ITag) {
-      return this.http.post<ITag>('http://10.0.0.126:3000', newTag, {
+      return this.http.post<ITag>('http://10.0.0.126:3000/api/tags/', newTag, {
         headers: new HttpHeaders({
           'Content-Type': 'application/json',
           "Access-Control-Allow-Origin" : '*'
@@ -56,7 +57,7 @@ export class DataService {
           subscriber.complete();
         })
       }
-      return this.http.put(`http://10.0.0.126:3000/${tagId}`, {status: status}, {
+      return this.http.put(`http://10.0.0.126:3000/api/tags/${tagId}`, {status: status}, {
         headers: new HttpHeaders({
           'Content-Type': 'application/json',
           "Access-Control-Allow-Origin" : '*'
@@ -64,7 +65,7 @@ export class DataService {
       })
     }
     assignToDriver(driver: number, tagId: number) {
-      return this.http.put(`http://10.0.0.126:3000/${tagId}`, driver, {
+      return this.http.put(`http://10.0.0.126:3000/api/tags/${tagId}`, driver, {
         headers: new HttpHeaders({
           'Content-Type': 'application/json',
           "Access-Control-Allow-Origin" : '*'

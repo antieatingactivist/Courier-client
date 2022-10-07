@@ -11,7 +11,7 @@
       #signupForm="ngForm">
       <select class="form-select" aria-label="Default select example" [(ngModel)]=driver.number name="driverNumber">
         <option value="">Select Driver Number</option>
-        <option *ngFor="let driver of drivers" value="{{driver}}">{{driver}}</option>
+        <option *ngFor="let driver of drivers" value="{{driver.id}}">{{driver.id}}</option>
       </select>
       <button class="btn btn-primary mr-3"
       type="submit"

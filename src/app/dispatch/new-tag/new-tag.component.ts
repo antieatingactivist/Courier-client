@@ -43,7 +43,8 @@ export class NewTagComponent implements OnInit {
 
     this.dataService.postTag(tag).subscribe({
       next: (data: ITag) => {console.log(data)},
-      error: (err: any) => {console.error(err)}
+      error: (err: any) => {console.error(err)},
+      
     })
   }
 
