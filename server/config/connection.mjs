@@ -8,9 +8,9 @@ if (process.env.JAWSDB_URL) {
   sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {
 sequelize = new Sequelize(
-    "courier_db",
-    "root",
-    "password",
+  "courier_db",
+  process.env.DB_USER,
+  process.env.DB_PASSWORD,
     {
       host: 'localhost',
       dialect: 'mysql',
