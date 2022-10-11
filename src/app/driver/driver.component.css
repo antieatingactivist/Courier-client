@@ -1,3 +1,16 @@
-.container {
-    margin-top: 50px;
+.border {
+    /* margin-top: 20px; */
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    height: calc(100vh - 40px);
+    width: calc(100vw - 40px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.center {
+    /* border: 1px solid #ffffff; */
+    height: 60%;
 }
