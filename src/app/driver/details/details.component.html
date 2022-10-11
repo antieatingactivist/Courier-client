@@ -15,8 +15,8 @@
             <br>
             
             
-            <button *ngIf="!data.clientInfo.isRecipient" type="button" class="btn btn-primary mr-6" (click)="click()">Pick Up</button>
-            <button *ngIf="data.clientInfo.isRecipient" type="button" class="btn btn-primary mr-6" (click)="click()">Drop Off</button>  
+            <button *ngIf="!data.clientInfo.isRecipient" type="button" class="btn btn-primary mr-6" (click)="click()" [disabled]="status==='picked-up'">Pick Up</button>
+            <button *ngIf="data.clientInfo.isRecipient" type="button" class="btn btn-primary mr-6" (click)="click()" [disabled]="status==='complete'">Drop Off</button>  
             
 
         
