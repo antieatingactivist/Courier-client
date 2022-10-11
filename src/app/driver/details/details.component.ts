@@ -55,19 +55,11 @@ export class DetailsComponent implements OnInit {
   }
 
   click(): void {
-    // console.log(this.data.id);
-    // let status: string;
-    // if (this.data.id - Math.floor(this.data.id) === 0) {
-    //   status = "picked-up";
-    // } else {
-    //   status = "complete";
-    // }
-    // this.dataService.changeStatus(status, Math.floor(this.data.id)).subscribe({
-    //   next: (data: any) => {console.log(data)},
-    //   error: (err: any) => {console.error(err)}
-    // });
-    // this.location.back();
-    this.showSignatureScreen = !this.showSignatureScreen;
+    if (this.data.clientInfo.isRecipient) {
+      this.showSignatureScreen = !this.showSignatureScreen;
+    } else {
+      this.submit();
+    }
 
   }
 
