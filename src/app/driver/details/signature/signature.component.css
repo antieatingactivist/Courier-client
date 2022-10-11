@@ -1,4 +1,11 @@
-.full-height {
-    height: calc(100vh - 20px);
-    width: 100vw;
+.border {
+    /* margin-top: 20px; */
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    height: calc(100vh - 100px);
+    width: calc(100vw - 20px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
 }
