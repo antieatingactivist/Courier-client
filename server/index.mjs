@@ -67,18 +67,18 @@ app.put("/api/tags/:id", async function(req, res) {
 app.post("/api/tags", async function(req, res) {
 
   const sender = {
-    "name": req.body.senderName,
-    "address": req.body.senderAddress,
-    "city": req.body.senderCity,
-    "state": req.body.senderState,
-    "zip": req.body.senderZip
+    name: req.body.senderName,
+    address: req.body.senderAddress,
+    city: req.body.senderCity,
+    state: req.body.senderState,
+    zip: req.body.senderZip
   }
   const recipient = {
-    "name": req.body.recipientName,
-    "address": req.body.recipientAddress,
-    "city": req.body.recipientCity,
-    "state": req.body.recipientState,
-    "zip": req.body.recipientZip
+    name: req.body.recipientName,
+    address: req.body.recipientAddress,
+    city: req.body.recipientCity,
+    state: req.body.recipientState,
+    zip: req.body.recipientZip
   }
 
   const createSender = await Client.create(sender);
