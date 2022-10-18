@@ -7,7 +7,7 @@ The idea for this app was born out of frustration over the type of app I had to 
 
 ![IMG_1143](https://user-images.githubusercontent.com/1414728/195002403-92a42911-2fa6-4196-9f0c-a2bc01f54cce.jpeg)...![IMG_1144](https://user-images.githubusercontent.com/1414728/195002418-828fb986-f4a0-4be4-b5f8-e0661dc5f94c.jpeg)
 
-## Usage
+## Installation
 
 - Visit https://antieatingactivist.github.io/Courier-client/ for a demo. When app is unable to connect to a back end, a demo driver will be selectable, and data will be replaced with demo data from a built in JSON file.
 
@@ -18,3 +18,27 @@ The idea for this app was born out of frustration over the type of app I had to 
 - Add new database to mySQL `CREATE DATABASE courier_db;`
 - Start server `npm start`
 - Navigate to http://localhost:4200
+
+
+## Deployed link
+
+https://antieatingactivist.github.io/Courier-client/
+
+## Built With
+
+* [Angular](https://angular.io)
+* [node.js](https://nodejs.dev) 
+* [express.js](http://expressjs.com)
+* [sequelize](https://sequelize.org)
+* [mySQL](https://www.mysql.com)
+
+## Authors
+
+Garrett Corbin
+
+- [https://github.com/antieatingactivist/](https://github.com/)
+- [https://www.linkedin.com/in/garrett-corbin-7a7777227/](https://www.linkedin.com/)
+
+## License
+
+This project is licensed under The MIT license
