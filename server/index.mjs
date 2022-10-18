@@ -1,26 +1,19 @@
 import express from 'express';
-import path from 'path';
-import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import { Driver, Tag, Client } from './models/index.mjs';
 
-
-dotenv.config();
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
 const app = express();
 const PORT = process.env.PORT || 3000;
-
+dotenv.config();
 app.use(express.json());
 app.use(cors());
 
 // Routes
-app.get("/api/tags/:driver", async function(req, res, next) {
+app.get("/api/tags/:driver", async function(req, res) {
 
   const data = await Tag.findAll({
-    where: {assignedTo: req.params.driver},
+    where: { assignedTo: req.params.driver },
     include: [{
       model: Client,
       as: "sender",
@@ -28,15 +21,13 @@ app.get("/api/tags/:driver", async function(req, res, next) {
       model: Client,
       as: "recipient",
     }]
-
   });
-  res.json(addClientData(data));  
+  res.json( addClientData(data) );  
 });
 
-app.get("/api/tags/", async function(req, res, next) {
+app.get("/api/tags/", async function(_req, res) {
 
   const data = await Tag.findAll({
-    // where: {assignedTo: req.params.driver},
     include: [{
       model: Client,
       as: "sender",
@@ -49,36 +40,33 @@ app.get("/api/tags/", async function(req, res, next) {
   res.json(addClientData(data));    
 });
 
-
-app.get("/api/drivers", async function(req, res, next) {
+app.get("/api/drivers", async function(_req, res) {
   const data = await Driver.findAll({
     
   });
   res.json(data);
 });
 
-app.put("/api/tags/:id", async function(req, res, next) {
-
+app.put("/api/tags/:id", async function(req, res) {
+  let tag;
   if (req.body.driver) {
-    const tag = await Tag.update(
+    tag = await Tag.update(
       { assignedTo: req.body.driver },
       { where: {id: req.params.id}}
-    )
-    res.json(tag);
+    );
   }
   if (req.body.status) {
-    const tag = await Tag.update(
+    tag = await Tag.update(
       { status: req.body.status },
       { where: {id: req.params.id}}
-    )
-    res.json(tag);
+    );
   }  
-})
+  res.json(tag);
+});
 
-app.post("/api/tags", async function(req, res, next) {
+app.post("/api/tags", async function(req, res) {
 
   const sender = {
-
     "name": req.body.senderName,
     "address": req.body.senderAddress,
     "city": req.body.senderCity,
@@ -86,7 +74,6 @@ app.post("/api/tags", async function(req, res, next) {
     "zip": req.body.senderZip
   }
   const recipient = {
-
     "name": req.body.recipientName,
     "address": req.body.recipientAddress,
     "city": req.body.recipientCity,
@@ -114,22 +101,18 @@ app.post("/api/tags", async function(req, res, next) {
 
 });
 
-
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}!`);
 });
 
-
 function addClientData(data) {
   for (let tag of data) {
-
     tag.sender.setDataValue('arrivalWindowStart', tag.get({plain: true}).senderWindowStart);
     tag.sender.setDataValue('arrivalWindowEnd', tag.get({plain: true}).senderWindowEnd);
     tag.sender.setDataValue('isRecipient', false);
     tag.recipient.setDataValue('arrivalWindowStart', tag.get({plain: true}).recipientWindowStart);
     tag.recipient.setDataValue('arrivalWindowEnd', tag.get({plain: true}).recipientWindowEnd);
-    tag.recipient.setDataValue('isRecipient', true);
-    
+    tag.recipient.setDataValue('isRecipient', true);  
   }
   return data;
 }
