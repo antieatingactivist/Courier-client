@@ -29,18 +29,8 @@ app.get("/api/tags/:driver", async function(req, res, next) {
       as: "recipient",
     }]
 
-  })
-  for (let tag of data) {
-
-    tag.sender.setDataValue('arrivalWindowStart', tag.get({plain: true}).senderWindowStart);
-    tag.sender.setDataValue('arrivalWindowEnd', tag.get({plain: true}).senderWindowEnd);
-    tag.sender.setDataValue('isRecipient', false)
-    tag.recipient.setDataValue('arrivalWindowStart', tag.get({plain: true}).recipientWindowStart);
-    tag.recipient.setDataValue('arrivalWindowEnd', tag.get({plain: true}).recipientWindowEnd);
-    tag.recipient.setDataValue('isRecipient', true)
-    
-  }
-  res.json(data);    
+  });
+  res.json(formatTagData(data));  
 });
 
 app.get("/api/tags/", async function(req, res, next) {
@@ -55,18 +45,8 @@ app.get("/api/tags/", async function(req, res, next) {
       as: "recipient",
     }]
 
-  })
-  for (let tag of data) {
-
-    tag.sender.setDataValue('arrivalWindowStart', tag.get({plain: true}).senderWindowStart);
-    tag.sender.setDataValue('arrivalWindowEnd', tag.get({plain: true}).senderWindowEnd);
-    tag.sender.setDataValue('isRecipient', false)
-    tag.recipient.setDataValue('arrivalWindowStart', tag.get({plain: true}).recipientWindowStart);
-    tag.recipient.setDataValue('arrivalWindowEnd', tag.get({plain: true}).recipientWindowEnd);
-    tag.recipient.setDataValue('isRecipient', true)
-    
-  }
-  res.json(data);    
+  });
+  res.json(formatTagData(data));    
 });
 
 
@@ -138,4 +118,19 @@ app.post("/api/tags", async function(req, res, next) {
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}!`);
 });
+
+
+function formatTagData(data) {
+  for (let tag of data) {
+
+    tag.sender.setDataValue('arrivalWindowStart', tag.get({plain: true}).senderWindowStart);
+    tag.sender.setDataValue('arrivalWindowEnd', tag.get({plain: true}).senderWindowEnd);
+    tag.sender.setDataValue('isRecipient', false);
+    tag.recipient.setDataValue('arrivalWindowStart', tag.get({plain: true}).recipientWindowStart);
+    tag.recipient.setDataValue('arrivalWindowEnd', tag.get({plain: true}).recipientWindowEnd);
+    tag.recipient.setDataValue('isRecipient', true);
+    
+  }
+  return data;
+}
 
