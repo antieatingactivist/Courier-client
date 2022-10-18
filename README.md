@@ -14,7 +14,7 @@ The idea for this app was born out of frustration over the type of app I had to 
 - Clone this repository `git clone <repo address>`
 - Move into cloned directory `cd Courier-client`
 - Install dependencies `npm install`
-- Set up environement variables by renaming .env.EXAMPLE to .env and adding your mySQL username and password.
+- Set up environment variables by renaming .env.EXAMPLE to .env and adding your mySQL username and password.
 - Add new database to mySQL `CREATE DATABASE courier_db;`
 - Start server `npm start`
 - Navigate to http://localhost:4200
