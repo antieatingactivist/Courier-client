@@ -30,7 +30,7 @@ app.get("/api/tags/:driver", async function(req, res, next) {
     }]
 
   });
-  res.json(formatTagData(data));  
+  res.json(addClientData(data));  
 });
 
 app.get("/api/tags/", async function(req, res, next) {
@@ -46,7 +46,7 @@ app.get("/api/tags/", async function(req, res, next) {
     }]
 
   });
-  res.json(formatTagData(data));    
+  res.json(addClientData(data));    
 });
 
 
@@ -120,7 +120,7 @@ app.listen(PORT, () => {
 });
 
 
-function formatTagData(data) {
+function addClientData(data) {
   for (let tag of data) {
 
     tag.sender.setDataValue('arrivalWindowStart', tag.get({plain: true}).senderWindowStart);
