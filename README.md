@@ -22,7 +22,7 @@ The idea for this app was born out of frustration over the type of app I had to 
 
 ## Deployed link
 
-https://antieatingactivist.github.io/Courier-client/
+https://platevoltage.github.io/Courier-client/
 
 ## Built With
 
