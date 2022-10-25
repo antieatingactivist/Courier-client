@@ -1,6 +1,6 @@
 # CourierClient
 
-## https://antieatingactivist.github.io/Courier-client/
+## https://platevoltage.github.io/Courier-client/
 (This link is meant to be opened on a mobile device) 
 
 The idea for this app was born out of frustration over the type of app I had to use in one of my former jobs, a bicycle courier. I wanted to create an app that was easy to look at and intuitive. The app is built using Angular and is optimised for smartphone use. The backend is built with Node.js and uses the Sequelize ORM to perform CRUD operations on a MySQL database.
@@ -36,7 +36,7 @@ https://antieatingactivist.github.io/Courier-client/
 
 Garrett Corbin
 
-- [https://github.com/antieatingactivist/](https://github.com/)
+- [https://github.com/platevoltage/](https://github.com/)
 - [https://www.linkedin.com/in/garrett-corbin-7a7777227/](https://www.linkedin.com/)
 
 ## License
